@@ -1,0 +1,59 @@
+@import '../../index.sass'
+.headerContainer
+  display: flex
+  width: auto
+  padding: 8px 60px
+  justify-content: space-between
+  align-items: center
+  position: relative // Nécessaire pour positionner le menu burger
+
+  &_logo
+    width: 148px
+    height: auto
+    flex-shrink: 0
+    @media (max-width: 768px)
+      width: 120px // Ajuster la largeur pour les écrans mobiles
+      height: auto // Maintenir les proportions
+
+  &_navbar
+    display: flex
+    width: 700px
+    justify-content: space-between
+    align-items: center
+    flex-shrink: 0
+    background: none
+    border: none
+    cursor: pointer
+  
+    &.active
+        font-weight: bold
+        color: $terra-cotta
+    
+    &.open
+        display: none
+
+    @media (max-width: 768px)
+      display: none // Cacher le menu par défaut sur mobile
+      &.open
+        display: flex // Afficher le menu quand il est ouvert en mode mobile
+        flex-direction: column
+        position: absolute
+        top: 100% // Positionne le menu juste en dessous de l'en-tête
+        left: 0
+        width: 90%
+        background-color: white
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)
+        padding: 16px
+        box-sizing: border-box // Inclure le padding dans la largeur totale
+
+      & > button
+        margin: 12px 0 // Ajouter de l'espace entre les boutons
+
+  &_burgerIcon
+    display: none
+    @media (max-width: 768px)
+      display: block // Afficher le menu burger sur mobile
+      background: none
+      border: none
+      font-size: 40px
+      cursor: pointer

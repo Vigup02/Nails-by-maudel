@@ -1,0 +1,57 @@
+// Définir les variables de couleur pour le bouton
+@import '../../../index.sass'
+
+.contactButton
+    font-family: 'Marvel_R', sans-serif
+    font-size: 1.5rem
+    color: $black
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    display: inline-flex
+    padding: 0.5rem 1rem
+    align-items: center
+    gap: 10px
+    border-radius: 0.5rem
+    border: 1px solid $black
+    background: $Latte
+    box-shadow: 4px 4px 0px 0px $black
+    cursor: pointer
+    text-align: center
+    text-decoration: none
+    transition: background-color 0.3s ease, box-shadow 0.3s ease
+
+    // Effet de survol
+    &:hover
+        border: 1px solid $terra-cotta
+        background: $blanc
+        box-shadow: 0px 0px 0px 0px
+        font-style: bold
+        font-weight: 700
+        color: $terra-cotta
+
+    // Effet actif (clic)
+    &:active
+        border: 1px solid $terra-cotta
+        background: $blanc
+        box-shadow: 0px 0px 0px 0px 
+        font-style: bold
+        font-weight: 700
+        color: $terra-cotta
+    
+    // Styles mobiles
+    @media (max-width: 768px)
+        box-shadow: 2px 2px 0px 0px $black
+        padding: 6px 12px
+        gap: 10px
+        font-size: 1rem
+
+        &:hover
+            box-shadow: 0px 0px 0px 0px 
+            font-style: bold
+            font-weight: 700
+
+        &:active
+            box-shadow: 0px 0px 0px 0px 
+            font-style: bold
+            font-weight: 700

@@ -1,0 +1,49 @@
+// Définir les variables de couleur pour le bouton
+@import '../../../index.sass'
+
+.navbarButton
+    font-family: 'Marvel_R', sans-serif
+    font-size: 1.5rem
+    color: $black
+    background: none
+    border: none
+    font-style: normal
+    font-weight: 400
+    line-height: normal    
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    gap: 10px
+    cursor: pointer
+    text-align: center
+    text-decoration: none
+
+    // Effet de survol
+    &:hover
+        border-bottom: 2px solid $Latte
+        color: $terra-cotta
+        font-style: bold
+        font-weight: 700
+
+    // Effet actif (clic)
+    &:active
+        color: $terra-cotta
+        font-style: bold
+        font-weight: 700
+    
+    // Styles mobiles
+    @media (max-width: 768px)
+        font-size: 1rem
+
+        &:hover
+            border-bottom: 2px solid $Latte
+
+        &:active
+            font-family: 'Marvel_B', sans-serif
+            color: $terra-cotta
+            font-style: bold
+            font-weight: 700
+
+.active
+  font-weight: 700
+  color: var(--Terra-cotta, #854628)

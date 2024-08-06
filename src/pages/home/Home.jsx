@@ -1,50 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import Carousel from '../../components/Carousel/Carousel';
-import MovieCard from '../../components/MovieCard/MovieCard';
-import { NetflimApi } from '../../api/netflim-api.js';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import fleur8Img from '../../assets/icône_illustration/fleur/fleur_8_pétales.svg'; 
+import mainheroImg from '../../assets/Image/home/main_hero-removebg.png';
+import PrimaryButton from '../../components/Buttons/PrimaryButton/PrimaryButton';
+
 import s from './style.module.css';
 
 const Home = () => {
-  const [movies, setMovies] = useState([]);
-  const [topMovies, setTopMovies] = useState([]);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const topRatedMovies = await NetflimApi.fetchAll();
-        setTopMovies(topRatedMovies.results.slice(0, 5));
-
-        const allMovies = await NetflimApi.fetchAll();
-        setMovies(allMovies.results.slice(4, 20));
-      } catch (error) {
-        console.error('Failed to fetch movies:', error);
-      }
-    };
-
-    fetchMovies();
-  }, []);
-
-  return (
-    <div className={s.wrapperCarousel}>
-      <div className="containerGlobal">
-        <h1>Les 20 films que l’équipe de Netflim a adorés</h1>
+return (
+    <div className={s.homeHero}>
+      <div className={s['Home_Hero_txt']}>
+        <h1>L'Art des Ongles, </h1>
+        <h1>une Evasion Créative</h1>
+        <p>Plongez dans un voyage artistique avec des designs de nail art uniques, raffinés et empreints de caractère. 
+        Chaque création raconte une histoire, la vôtre.</p>
+        <PrimaryButton text="Trouvez votre style" onClick={() => navigate('/galerie')} />
       </div>
-      <div className={s.carouselBg}>
-        <div className="containerGlobal">
-          <Carousel movies={topMovies} />
-        </div>
-      </div> 
-      <div className={s.cardsContainer}>
-        {movies.length > 0 ? (
-          movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))
-        ) : (
-          <p>Loading movies...</p>
-        )}
+      <div>
+        <img src={fleur8Img} alt="Fleur" />
+      </div>
+      <div>
+        <img src={mainheroImg} alt="Main_hero" />
       </div>
     </div>
   );
 };
-
 export default Home;

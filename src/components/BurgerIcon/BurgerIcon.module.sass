@@ -1,0 +1,26 @@
+// Définir les variables de couleur pour le bouton
+@import '../../index.sass'
+
+.burgerIcon
+  display: none
+  @media (max-width: 768px)
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    width: 40px
+    height: 32px
+    cursor: pointer
+
+    .burgerBar
+      width: 32px
+      height: 4px
+      background-color: $black
+      transition: all 0.3s ease
+
+    &.open
+      .burgerBar:nth-child(1)
+        transform: translateY(8px) rotate(45deg)
+      .burgerBar:nth-child(2)
+        opacity: 0
+      .burgerBar:nth-child(3)
+        transform: translateY(-8px) rotate(-45deg)

@@ -1,22 +1,20 @@
 
-import React, {} from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Home from './pages/Home/Home'; // Importez Home comme composant par défaut
-import Salon from './pages/Salon/Salon'; // Importez Profil comme composant par défaut
-import Galerie from './pages/Galerie/Galerie'; // Importez Film comme composant par défaut
-import Service from './pages/Service/Service'; // Importez Film comme composant par défaut
-import Politique from './pages/Politique/Politique'; // Importez Film comme composant par défaut
+import Salon from './pages/Salon/Salon'; // Importez Salon comme composant par défaut
+import Galerie from './pages/Galerie/Galerie'; // Importez Galerie comme composant par défaut
+import Service from './pages/Service/Service'; // Importez Service comme composant par défaut
+import Politique from './pages/Politique/Politique'; // Importez Politique comme composant par défaut
 import Header from './components/Header/Header'; // Importez le Header comme composant par défaut
-import Footer from './components/Footer/Footer'; // Importez le Header comme composant par défaut
-import s from "./style.module.css"; // Importez les styles
+import Footer from './components/Footer/Footer'; // Importez le Footer comme composant par défaut
+import s from "./app.module.sass"; // Importez les styles
 
 const App = () => {
-
   return (
-    <div>
-
+    <div className={s.app}>
       <Header />
-      <div className={s.outlet_container}>
+      <div className={s.app_outlet}>
         <Outlet />
       </div>
       <Footer />
@@ -24,18 +22,20 @@ const App = () => {
   );
 };
 
-const AppWrapper = () => {
+const App2 = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="profil" element={<Profil />} />
-          <Route path="film/:movieId" element={<Film />} />
+          <Route path="salon" element={<Salon />} />
+          <Route path="galerie" element={<Galerie />} />
+          <Route path="service" element={<Service />} />
+          <Route path="politique" element={<Politique />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 };
 
-export default AppWrapper;
+export default App2;
