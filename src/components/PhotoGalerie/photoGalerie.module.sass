@@ -1,11 +1,68 @@
 @import '../../index.sass'
 
-.navbarGalerie
+.galeriePhoto
   display: flex
-  width: 640px
-  padding: 24px
-  justify-content: space-between
+  flex-direction: column
   align-items: center
-  background: $beige
-  border: none
-  cursor: pointer
+
+.photos
+  display: flex
+  width: 1320px
+  justify-content: center
+  align-items: flex-start
+  align-content: flex-start
+  gap: 24px
+  flex-wrap: wrap
+
+  @media (max-width: 768px)
+    display: grid
+    grid-template-columns: repeat(2, 1fr) // 2 colonnes pour mobile
+    width: auto
+
+.photoPair
+  display: flex
+  flex-direction: column
+  gap: 24px
+
+  @media (max-width: 768px)
+    flex-direction: row
+
+.reversePair
+  flex-direction: column-reverse
+
+.largePhoto
+  width: 424px
+  height: 516px
+  object-fit: cover
+
+.smallPhoto
+  width: 424px
+  height: 332px
+  object-fit: cover
+
+  @media (max-width: 768px)
+    width: 155px
+    height: 188.6px
+
+.pagination
+  display: flex
+  justify-content: center
+  margin-top: 20px
+
+  button
+    margin: 0 5px
+    padding: 10px 20px
+    border: none
+    font-family: 'Lato_R', sans-serif
+    background-color: $beige
+    color: $terra-cotta
+    cursor: pointer
+    font-size: 16px
+    border-radius: 8px
+
+    &:hover, &.active
+      font-family: 'Lato_R', sans-serif
+      background-color: $terra-cotta
+      color: $beige
+      font-weight: bold
+      border-radius: 8px

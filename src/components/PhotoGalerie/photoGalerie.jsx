@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import s from './photoGalerie.module.sass';
 
+// Fonction pour charger toutes les images d'un dossier
+const importAll = (r) => r.keys().map(r);
+
+// Charger les images de chaque catégorie
+const nailArtImages = importAll(require.context('../../assets/Image/Galerie/Nail Art', false, /\.(png|jpe?g|svg|webp)$/));
+const coloreImages = importAll(require.context('../../assets/Image/Galerie/Coloré', false, /\.(png|jpe?g|svg|webp)$/));
+const frenchImages = importAll(require.context('../../assets/Image/Galerie/French', false, /\.(png|jpe?g|svg|webp)$/));
+const naturelImages = importAll(require.context('../../assets/Image/Galerie/Naturel', false, /\.(png|jpe?g|svg|webp)$/));
+
 const photos = [
-  // Remplacez ceci par vos photos avec les propriétés adéquates
-  { src: 'path/to/photo1.jpg', category: 'Nail Art' },
-  { src: 'path/to/photo2.jpg', category: 'Coloré' },
-  { src: 'path/to/photo3.jpg', category: 'French' },
-  { src: 'path/to/photo4.jpg', category: 'Naturel' },
-  // Ajoutez autant de photos que nécessaire
+  ...nailArtImages.map(src => ({ src, category: 'Nail Art' })),
+  ...coloreImages.map(src => ({ src, category: 'Coloré' })),
+  ...frenchImages.map(src => ({ src, category: 'French' })),
+  ...naturelImages.map(src => ({ src, category: 'Naturel' })),
 ];
 
-const PhotoGallery = ({ selectedCategory }) => {
+const PhotoGalerie = ({ selectedCategory }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const photosPerPage = 12;
+  const photosPerPage = 24;
   const filteredPhotos = photos.filter(photo => photo.category === selectedCategory);
   const totalPages = Math.ceil(filteredPhotos.length / photosPerPage);
 
@@ -25,16 +32,37 @@ const PhotoGallery = ({ selectedCategory }) => {
     currentPage * photosPerPage
   );
 
+  const arrangePhotos = (photos) => {
+    return photos.reduce((acc, photo, index) => {
+      const groupIndex = Math.floor(index / 6);
+      if (!acc[groupIndex]) acc[groupIndex] = [];
+      if (index % 2 === 0) {
+        acc[groupIndex].push([photo]);
+      } else {
+        acc[groupIndex][acc[groupIndex].length - 1].push(photo);
+      }
+      return acc;
+    }, []);
+  };
+
+  const groupedPhotos = arrangePhotos(displayedPhotos);
+
   return (
-    <div className={s.photoGallery}>
+    <div className={s.galeriePhoto}>
       <div className={s.photos}>
-        {displayedPhotos.map((photo, index) => (
-          <img
-            key={index}
-            src={photo.src}
-            alt={photo.category}
-            className={index % 2 === 0 ? s.largePhoto : s.smallPhoto}
-          />
+        {groupedPhotos.map((group, groupIndex) => (
+          group.map((photoPair, index) => (
+            <div key={index} className={`${s.photoPair} ${(index === 1 && groupIndex % 2 === 0) ? s.reversePair : ''}`}>
+              {photoPair.map((photo, subIndex) => (
+                <img
+                  key={subIndex}
+                  src={photo.src}
+                  alt={photo.category}
+                  className={subIndex % 2 === 0 ? s.largePhoto : s.smallPhoto}
+                />
+              ))}
+            </div>
+          ))
         ))}
       </div>
       <div className={s.pagination}>
@@ -52,4 +80,4 @@ const PhotoGallery = ({ selectedCategory }) => {
   );
 };
 
-export default PhotoGallery;
+export default PhotoGalerie;

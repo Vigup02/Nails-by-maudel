@@ -7,7 +7,7 @@ const Galerie = () => {
   const [selectedCategory, setSelectedCategory] = useState('Nail Art');
 
   return (
-    <div className={s.app}>
+    <div className={s.s1Galerie}>
       <NavBarGalerie
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
