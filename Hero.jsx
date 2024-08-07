@@ -19,7 +19,7 @@ return (
         <PrimaryButton text="Trouvez votre style" onClick={() => navigate('/galerie')} />
       </div>
       <div>
-        <img className={s.homeHero_img} src={fleur8Img} alt="Fleur" />
+        <img src={fleur8Img} alt="Fleur" />
       </div>
       <div>
         <img src={mainheroImg} alt="Main_hero" />
