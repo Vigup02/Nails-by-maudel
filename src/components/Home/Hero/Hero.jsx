@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import fleur8Img from '../../../assets/icône_illustration/fleur/fleur_8_pétales.svg'; 
-import mainheroImg from '../../../assets/Image/home/main_hero-removebg.png';
+import fleurHero from '../../../assets/icône_illustration/fleur/fleurhero.svg'; 
+import mainHero from '../../../assets/Image/home/main_hero-removebg.png';
 import PrimaryButton from '../../Buttons/PrimaryButton/PrimaryButton';
 
 import s from './hero.module.sass';
@@ -18,11 +18,13 @@ return (
         Chaque création raconte une histoire, la vôtre.</p>
         <PrimaryButton text="Trouvez votre style" onClick={() => navigate('/galerie')} />
       </div>
-      <div>
-        <img src={fleur8Img} alt="Fleur" />
-      </div>
-      <div>
-        <img src={mainheroImg} alt="Main_hero" />
+      <div className={s.homeHero_img}>
+        <div>
+          <img className={s.homeHero_img_fleur} src={fleurHero} alt="Fleur" />
+        </div>
+        <div>
+          <img className={s.homeHero_img_main} src={mainHero} alt="Main_hero" />
+        </div>
       </div>
     </div>
   );
