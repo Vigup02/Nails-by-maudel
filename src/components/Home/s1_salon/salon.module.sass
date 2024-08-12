@@ -9,16 +9,23 @@
     align-self: stretch
     background-color: $beige
     @media (max-width: 768px)
-        
-
+        padding: 18px 15px
+        justify-content: center
+        align-items: center
+        gap: 18px
+        align-self: stretch
     &_bkgrd
-        width: 868px
+        width: 60%
         height: 455px
         position: absolute
-        right: 160px
+        right: 12.6%
         top: 22px
         background-color: $black
         z-index: 1
+        @media (max-width: 768px)
+            width: 330px
+            height: 391px
+            bottom: 0
     &_container
         display: flex
         width: 88%
@@ -26,10 +33,24 @@
         justify-content: space-between
         align-items: center
         z-index: 2
+        @media (max-width: 768px)
+            padding-bottom: 18px
+            width: 100%
+            height: auto
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            gap: 18px
+            flex: 1 0 0
         &_imgvitrine
             border: 8px solid $black
-            width: 390px
+            width: 39%
             height: auto
+            @media (max-width: 768px)
+                border: 2px solid $black
+                width: 178px
+                height: 161px
         &_txt
             display: flex
             width: 43%
@@ -40,4 +61,12 @@
             align-items: flex-start
             flex-shrink: 0
             color: $beige
+            @media (max-width: 768px)
+                align-items: flex-start
+                gap: 10px
+                align-self: stretch
+        &_icone
+            width: 100%
+            @media (max-width: 1000px)
+                display: none
 
