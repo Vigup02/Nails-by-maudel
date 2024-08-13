@@ -2,73 +2,36 @@
 @import '../../../index.sass'
 
 .roundButton
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  background-color: $beige
+  border: none
   display: flex
   align-items: center
   justify-content: center
-  width: 106px
-  height: 106px
-  border-radius: 50%
-  flex-shrink: 0
   cursor: pointer
-  text-align: center
-  transition: all 0.3s ease
+  box-shadow: 0 4px 8px $terra-cotta
+  transition: background-color 0.3s ease, color 0.3s ease // Transition pour la couleur de fond et le texte
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 2
+  @media (max-width: 768px)
+      width: 70px
+      height: 70px
 
-  .roundButton__svg
-    width: 100%
-    height: 100%
-    fill: $beige
-    stroke-width: 1px
-    stroke: $terra-cotta
-    filter: drop-shadow(4px 4px 2px $terra-cotta)
-
-  .roundButton__text
-    position: absolute
+  // Effet de survol et actif (clic) desktop
+  &:hover, &:active
+    background-color: $terra-cotta
+  
+  &_text
     color: $terra-cotta
-    font-family: 'Marvel', sans-serif
-    font-size: 1.5rem
-    font-weight: 700
-    line-height: normal
+    transition: color 0.3s ease // Transition pour la couleur du texte
 
-  // Effet de survol desktop
-  &:hover
-    .roundButton__svg
-      fill: $terra-cotta
+  &:hover .roundButton_text, &:active .roundButton_text
+    color: $beige
 
-    .roundButton__text
-      color: $beige
-
-  // Effet actif (clic) desktop
-  &:active
-    .roundButton__svg
-      fill: $terra-cotta
-
-    .roundButton__text
-      color: $beige
-
-// Styles mobiles
-@media (max-width: 768px)
-  .roundButton
-    .roundButton__svg
-      filter: drop-shadow(2px 2px 2px $terra-cotta)
-
-    .roundButton__text
-      font-size: 1rem
-      font-weight: 400
-
-    // Effet de survol mobile
-    &:hover
-      .roundButton__svg
-        fill: $terra-cotta
-
-      .roundButton__text
-        color: $beige
-        font-weight: 700
-
-    // Effet actif (clic) mobile
-    &:active
-      .roundButton__svg
-        fill: $terra-cotta
-
-      .roundButton__text
-        color: $beige
-        font-weight: 700
+  
+    

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import fleurHero from '../../../assets/icône_illustration/fleur/fleurhero.svg'; 
-import mainHero from '../../../assets/Image/home/main_hero-removebg.png';
+import mainHero from '../../../assets/Image/home/main_hero-removebg.webp';
 import PrimaryButton from '../../Buttons/PrimaryButton/PrimaryButton';
 
 import s from './hero.module.sass';

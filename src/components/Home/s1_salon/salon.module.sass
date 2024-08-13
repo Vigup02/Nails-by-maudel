@@ -5,27 +5,31 @@
     padding: 24px 60px
     justify-content: center
     align-items: center
-    gap: 73px
+    gap: 5%
+    height: auto
     align-self: stretch
     background-color: $beige
     @media (max-width: 768px)
+        display: flex
         padding: 18px 15px
         justify-content: center
         align-items: center
-        gap: 18px
-        align-self: stretch
+        height: auto
     &_bkgrd
         width: 60%
         height: 455px
         position: absolute
-        right: 12.6%
+        right: 13.5%
         top: 22px
         background-color: $black
         z-index: 1
         @media (max-width: 768px)
-            width: 330px
+            width: 92%
             height: 391px
-            bottom: 0
+            right: auto
+            top: auto
+            left: auto
+            bottom: 18px
     &_container
         display: flex
         width: 88%
@@ -35,13 +39,12 @@
         z-index: 2
         @media (max-width: 768px)
             padding-bottom: 18px
-            width: 100%
+            width: 92%
             height: auto
             display: flex
             flex-direction: column
-            justify-content: space-between
             align-items: center
-            gap: 18px
+            gap: 5%
             flex: 1 0 0
         &_imgvitrine
             border: 8px solid $black
@@ -49,8 +52,8 @@
             height: auto
             @media (max-width: 768px)
                 border: 2px solid $black
-                width: 178px
-                height: 161px
+                width: 40%
+                height: auto
         &_txt
             display: flex
             width: 43%
@@ -62,11 +65,25 @@
             flex-shrink: 0
             color: $beige
             @media (max-width: 768px)
-                align-items: flex-start
-                gap: 10px
-                align-self: stretch
+                width: 73%
+                height: auto
+                gap: 5%
+                padding: 5%
+            &_title
+                display: flex
+                justify-self: center
+                align-self: center
+            &_button1
+                display: block
+                @media (max-width: 768px)
+                    display: none
+        &_button2
+            display: none
+            @media (max-width: 768px)        
+                display: block
         &_icone
-            width: 100%
+            display: block
             @media (max-width: 1000px)
                 display: none
+
 

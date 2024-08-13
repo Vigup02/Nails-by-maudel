@@ -1,9 +1,110 @@
 @import '../../../index.sass'
-.serviceHero
+.s2Service
     display: flex
-    width: 100%
-    height: 700px
-    padding-left: 4%
+    padding: 24px 60px
+    flex-direction: column
     align-items: center
-    gap: 4%
-    flex-shrink: 0
+    gap: 24px
+    align-self: stretch
+    @media (max-width: 768px)
+        padding: 18px 15px
+        gap: 5%
+    &_title
+        width: 37%
+        color: $black
+    &_container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: auto
+        gap: 24px
+        align-self: stretch
+        background-color: $Latte
+        @media (max-width: 768px)
+            gap: 5%
+        &_bloc
+            display: flex
+            align-items: center
+            align-content: center
+            align-self: stretch
+            width: 100%
+            height: 100%
+            @media (max-width: 768px)
+                justify-content: center
+                align-self: center
+                height: 411px
+            &_img
+                width: 34%
+                height: auto
+                display: flex
+                align-self: flex-end
+                @media (max-width: 768px)
+                    display: none
+            &_sousBloc
+                display: flex
+                width: 66%
+                height: 540px
+                flex-direction: column
+                align-items: center
+                gap: 24px
+                @media (max-width: 768px)
+                    height: 375px
+                    padding: 18px 0px
+                    gap: 5%
+                &_liste
+                    display: grid
+                    grid-template-columns: repeat(2, 1fr)
+                    grid-template-rows: repeat(2, 1fr)
+                    width: 100%
+                    height: 440px
+                    border-radius: 0px 0px 0px 32px
+                    background-color: $blanc
+                    position: relative
+                    @media (max-width: 768px)
+                        height: 326px
+                        border-radius: 0
+                    &_vernis, &_lime, &_nailart, &_broken
+                        display: flex
+                        width: 100%
+                        height: 100%
+                        flex-direction: column
+                        justify-content: center
+                        align-items: center
+                        flex-shrink: 0
+                        background-color: $blanc
+                        border: 2px solid $black
+                        box-sizing: border-box // La bordure et le padding sont inclus dans la largeur et la hauteur
+                        @media (max-width: 768px)
+                            border: 0.5px solid $black
+                            box-sizing: border-box
+                            padding: 8px
+                        &_img1, &_img2, &_img3, &_img4 
+                            width: 100px
+                            height: 100px
+                            flex-shrink: 0
+                            @media (max-width: 768px)
+                                width: 50px
+                                height: 50px
+                        &_text1, &_text2, &_text3, &_text4 
+                            text-align: center
+                        
+                    &_nailart
+                        border-radius: 0px 0px 0px 32px
+                        @media (max-width: 768px)
+                            border-radius: 0px 0px 0px 0px
+                    &_fleur2
+                        display: flex
+                        width: 140px
+                        height: 140px
+                        align-items: center
+                        justify-content: center
+                        position: absolute
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%, -50%)
+                        pointer-events: none // Pour éviter d'interférer avec les autres éléments
+                        @media (max-width: 768px)
+                            width: 70px
+                            height: 70px
