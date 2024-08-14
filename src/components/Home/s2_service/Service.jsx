@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import fleur1 from '../../../assets/icône_illustration/fleur/fleur_1_removebg.webp';
-import vernis from '../../../assets/icône_illustration/ongle/vernis-a-ongle.png';
-import lime from '../../../assets/icône_illustration/ongle/lime-a-ongles.png';
-import nailArt from '../../../assets/icône_illustration/ongle/nail_art.png';
-import broken from '../../../assets/icône_illustration/ongle/nail_broken.png';
+import vernis from '../../../assets/icône_illustration/ongle/vernis-a-ongle.webp';
+import lime from '../../../assets/icône_illustration/ongle/lime-a-ongles.webp';
+import nailArt from '../../../assets/icône_illustration/ongle/nail_art.webp';
+import broken from '../../../assets/icône_illustration/ongle/nail_broken.webp';
 import fleur2 from '../../../assets/icône_illustration/fleur/fleur_pleine_latte.svg'; 
 import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton';
 import s from './service.module.sass';
