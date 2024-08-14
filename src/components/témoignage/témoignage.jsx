@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './HoraireContact.module.sass';
+import s from './témoignage.module.sass';
 
 const HoraireContact = () => {
 

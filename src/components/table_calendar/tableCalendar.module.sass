@@ -1,0 +1,36 @@
+@import '../../index.sass'
+.Calendar
+    display: flex
+    width: 640px
+    justify-content: center
+    align-items: center
+    padding: 0px 24px
+    gap: 1rem
+    @media (max-width: 768px)
+        padding: 0px 18px
+        gap: 5%
+    &_table
+        width: 100%
+        max-width: 400px
+        table-layout: fixed
+        border-collapse: collapse
+        background-color: transparent
+        border: none
+        @media (max-width: 768px)
+            width: 35%
+        &_row
+            td
+                border: none
+                line-height: 1rem                
+            &_dayColumn
+                width: 45%
+                text-align: left
+            &_separator
+                width: 10%
+                text-align: center
+            &_timeColumn
+                width: 45%
+                text-align: right
+
+
+  

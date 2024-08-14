@@ -3,7 +3,9 @@ import Hero from '../../components/Home/Hero/Hero';
 import Salon from '../../components/Home/s1_salon/Salon';
 import Service from '../../components/Home/s2_service/Service';
 import Galerie from '../../components/Home/s3_galerie/Galerie';
-import HoraireContact from '../../components/Home/s4_5_horaire_contact/HoraireContact';
+import Horaire from '../../components/Home/s4_horaire/horaire';
+import Contact from '../../components/Home/s5_contact/contact';
+import Témoignage from '../../components/témoignage/témoignage';
 import s from './home.module.sass';
 
 const Home = () => {
@@ -14,7 +16,9 @@ return (
      <Salon/>
      <Service/>
      <Galerie/>
-     <HoraireContact/>
+     <Horaire/>
+     <Contact/>
+     <Témoignage/>
   </div>
   );
 };

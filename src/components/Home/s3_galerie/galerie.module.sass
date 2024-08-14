@@ -6,34 +6,44 @@
     align-items: center
     gap: 24px
     align-self: stretch
+    height: auto
+    @media (max-width: 768px)
+        padding: 18px 15px 36px 15px
+        gap: 18px
     &_title
-        width: 47%
         color: $terra-cotta
         text-align: center
     &_container
         display: flex
-        width: 91%
-        height: 290px
+        width: 100%
+        height: auto
         justify-content: space-between
         align-items: center
-        &_grp1, &_grp2, &_grp3, &_grp4
-            width: 290px
+        @media (max-width: 768px)
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: repeat(2, 1fr)
+            gap: 5% 5%  // Espacement entre les colonnes et les lignes
+            place-items: center  // Centre les éléments dans chaque cellule
+            
+        &_grp
+            width: 22%
             height: 290px
             position: relative
             flex-shrink: 0
             border-radius: 8px
-            z-index: 1
-
-            &_img1
-
-        
-
-            &_img2
-
-        
-
-            &_img3
-
-        
-
-            &_img4
+            z-index: 1 
+            transition: border 0.3s ease, box-shadow 0.3s ease // Ajout des transitions pour un effet lisse
+            @media (max-width: 768px)
+                width: 100%
+                height: 100%
+            
+            &_img
+                width: 100%
+                height: 290px
+                flex-shrink: 0
+                border-radius: 8px
+                opacity: 80%
+                @media (max-width: 768px)
+                    width: 100%
+                    height: 100%
