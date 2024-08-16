@@ -1,4 +1,5 @@
 @import '../../../index.sass'
+
 h1 span::after
   content: '\A' // Code pour un saut de ligne
   white-space: pre // Assure que le saut de ligne est respecté
@@ -60,11 +61,11 @@ h3 span::after
             position: absolute
             right: -5px
             bottom: -10px
-            width: 125%
+            width: 122%
             height: auto
             z-index: 1
             pointer-events: none
-
+            animation: rotateFleur 50s linear infinite // rotation 20s pour un tour complet
         &_main
             position: absolute
             right: 0
@@ -72,5 +73,11 @@ h3 span::after
             width: 125%
             height: auto
             z-index: 2
+
+@keyframes rotateFleur // Définition de l'animation de rotation
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)
 
 

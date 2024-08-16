@@ -2,7 +2,7 @@
 import React, { useState } from 'react'; // Importation de la bibliothèque React pour créer des composants React.
 import { Link, useLocation, useNavigate } from 'react-router-dom'; // Importation des hooks et composants de react-router-dom pour la navigation.
 import s from './header.module.sass'; // Importation du fichier de styles SASS spécifique au composant Header. `s` est l'alias pour accéder aux classes définies dans le fichier SASS.
-import logoImg from '../../assets/Logo/Logo_terra_cotta-removebg_header.png'; // Importation de l'image du logo pour l'afficher dans l'en-tête.
+import logoImg from '../../assets/Logo/Logo_terra_cotta-removebg_header.webp'; // Importation de l'image du logo pour l'afficher dans l'en-tête.
 import NavBarButton from '../Buttons/NavBarButton/NavBarButton'; // Importation du composant NavBarButton utilisé pour les boutons de la barre de navigation.
 import ContactButton from '../Buttons/ContactButton/ContactButton'; // Importation du composant ContactButton utilisé pour le bouton de contact.
 import BurgerIcon from '../BurgerIcon/BurgerIcon'; // Importez le nouveau composant
