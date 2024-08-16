@@ -5,7 +5,7 @@ import Service from '../../components/Home/s2_service/Service';
 import Galerie from '../../components/Home/s3_galerie/Galerie';
 import Horaire from '../../components/Home/s4_horaire/horaire';
 import Contact from '../../components/Home/s5_contact/contact';
-import Témoignage from '../../components/témoignage/témoignage';
+import Temoignage from '../../components/temoignage/temoignage';
 import s from './home.module.sass';
 
 const Home = () => {
@@ -18,7 +18,7 @@ return (
      <Galerie/>
      <Horaire/>
      <Contact/>
-     <Témoignage/>
+     <Temoignage/>
   </div>
   );
 };
