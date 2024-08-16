@@ -21,7 +21,7 @@ const Salon = () => {
       <div className={s.salon_contact}>
         
       </div>
-      <div className={s.salon_formulaire}>
+      <div id="formulaire-section" className={s.salon_formulaire}>
         <SignupForm/>
       </div>
     </div>

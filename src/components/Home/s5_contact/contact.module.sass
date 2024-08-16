@@ -1,1 +1,135 @@
 @import '../../../index.sass'
+.s5Contact
+    display: flex
+    padding: 24px 60px
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 24px
+    width: 100%
+    height: auto
+    overflow: hidden
+    box-sizing: border-box
+    position: relative
+    @media (max-width: 768px)
+        padding: 18px 15px
+        gap: 18px
+    &_title
+        color: $terra-cotta
+        text-align: center
+    &_container
+        display: flex
+        width: 100%
+        height: auto
+        padding: 24px
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 24px
+        overflow: hidden
+        box-sizing: border-box
+        flex: 1 0 0
+        align-self: stretch
+        background-color: $terra-cotta
+        position: relative
+        @media (max-width: 768px)
+            padding: 18px
+            gap: 18px
+        &_subtitle
+            color: $beige
+            text-align: center
+        &_txt
+            display: flex
+            padding: 24px 0px
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            gap: 24px
+            color: $beige
+            @media (max-width: 768px)
+                padding: 18px 0px
+                gap: 18px
+                align-items: center
+                width:100%
+                height: auto
+            &_adress, &_tel
+                display: flex      
+                justify-content: center
+                align-items: center
+                gap: 24px
+                @media (max-width: 768px)
+                    width: 100%
+                    gap: 18px
+                    padding: 0px
+                &_img
+                    width: auto // Garde la largeur automatique
+                    height: auto // Garde la hauteur automatique
+                    max-width: 100% // Empêche l'image de dépasser la largeur de son conteneur
+                    max-height: 100% // Empêche l'image de dépasser la hauteur de son conteneur
+
+                    @media (max-width: 768px)
+                        width: 13% // Ajuste la taille de l'image proportionnellement à la largeur de l'écran
+                        height: auto // Assure que l'image garde ses proportions
+                    
+
+                &_text
+                @media (max-width: 768px)
+                    text-align: center
+
+        &_fleurpleine
+            display: flex
+            width: 40%
+            height: 40%
+            align-items: center
+            position: absolute
+            right: -10%
+            top: 10%
+            @media (max-width: 768px)
+                display: none
+
+        &_fleurvide
+            display: flex
+            width: 40%
+            height: 40%
+            align-items: center
+            position: absolute
+            left: -8%
+            bottom: 10%
+            @media (max-width: 768px)
+                display: none
+
+        &_petitefleurpleine
+            display: flex
+            width: 10%
+            height: 10%
+            align-items: center
+            position: absolute
+            left: 10%
+            top: 15%
+            @media (max-width: 768px)
+                left: 6%
+                top: 25%
+
+        &_petitefleurvide1
+            display: flex
+            width: 10%
+            height: 10%
+            align-items: center
+            position: absolute
+            right: 20%
+            top: 10%
+            @media (max-width: 768px)
+                right: 6%
+                top: 80%
+        &_petitefleurvide2
+            display: flex
+            width: 10%
+            height: 10%
+            align-items: center
+            position: absolute
+            right: 10%
+            bottom: 20%
+            @media (max-width: 768px)
+                display: none
+       
+
