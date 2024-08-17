@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -29,18 +29,25 @@ const Temoignage = () => {
       <div className={s.temoignage__carousel}>
         <Swiper
           className={s.temoignage__carousel_swiper}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30} // Ajustez cet espace pour s'assurer que les slides ne débordent pas
           slidesPerView={3} // Affiche 3 slides à la fois
           centeredSlides={true} // Centre le slide actif
           loop={true} // Active la boucle pour le carrousel
           onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+          autoplay={{
+            delay: 3000, // Temps en millisecondes avant de passer à la diapositive suivante
+            disableOnInteraction: false, // Continue à défiler même après une interaction utilisateur
+          }}
           pagination={{
             clickable: true,
             renderBullet: (index, className) => (
               `<span class="${className}"></span>`
             ),
-          }}    
+          }}
+          // Ajouter les callbacks pour vérifier l'autoplay
+          onAutoplayStart={() => console.log('Autoplay has started')}
+          onAutoplayStop={() => console.log('Autoplay has stopped')}
           breakpoints={{
             768: {
               slidesPerView: 3, // Maintient l'affichage de 3 slides sur desktop
@@ -50,6 +57,7 @@ const Temoignage = () => {
             },
           }}
         >
+        
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.id}>
               <div className={`${s['temoignage__item']} ${index === activeSlide ? s['temoignage__item--active'] : ''}`}>

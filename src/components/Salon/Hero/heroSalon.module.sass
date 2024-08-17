@@ -1,0 +1,83 @@
+@import '../../../index.sass'
+
+h1 span::after
+  content: '\A' // Code pour un saut de ligne
+  white-space: pre // Assure que le saut de ligne est respecté
+  margin: 0
+
+h3 span::after
+  content: '\A' // Code pour un saut de ligne
+  white-space: pre // Assure que le saut de ligne est respecté
+
+.homeHero
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 100vh
+    padding-left: 60px
+    overflow: hidden // Évite le scroll horizontal
+    box-sizing: border-box // Inclut le padding dans la largeur totale
+    @media (max-width: 768px)
+        position: relative
+        display: flex
+        height: 345px
+        padding: 18px 15px
+        flex-direction: column
+        align-items: flex-start
+        gap: 18px
+        flex-shrink: 0
+        align-self: stretch
+        
+    &_txt
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        width: 65%
+        height: auto
+        padding: 24px
+        gap: 24px
+        box-sizing: border-box // Assure que le padding est inclus dans la largeur
+        @media (max-width: 768px)
+            gap: 18px
+            width: 100%
+            height: auto
+            padding: 0px
+    
+    &_img
+        position: relative
+        width: 35% 
+        height: 100% 
+        display: flex
+        justify-content: center 
+        align-items: center 
+        @media (max-width: 768px)
+            position: absolute
+            right: 0
+            bottom: 0
+            width: 30%
+        &_fleur
+            position: absolute
+            right: -5px
+            bottom: -10px
+            width: 122%
+            height: auto
+            z-index: 1
+            pointer-events: none
+            animation: rotateFleur 50s linear infinite // rotation 20s pour un tour complet
+        &_main
+            position: absolute
+            right: 0
+            bottom: 0
+            width: 125%
+            height: auto
+            z-index: 2
+
+@keyframes rotateFleur // Définition de l'animation de rotation
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)
+
+
