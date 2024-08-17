@@ -1,26 +1,13 @@
 import React from 'react';
+import HeroSalon from '../../components/Salon/Hero/HeroSalon';
 import SignupForm from '../../components/Formulaire/formulaire';
 import s from './salon.module.sass';
 
 const Salon = () => {
   
   return (
-    <div className={s.salon}>
-      <div className={s.salon_hero}>
-
-      </div>
-      <div className={s.salon_maude}>
-        
-      </div>
-      <div className={s.salon_valeur}>
-        
-      </div>
-      <div className={s.salon_salon}>
-        
-      </div>
-      <div className={s.salon_contact}>
-        
-      </div>
+    <div className={s.salonContainer}>
+      <HeroSalon/>
       <div id="formulaire-section" className={s.salon_formulaire}>
         <SignupForm/>
       </div>

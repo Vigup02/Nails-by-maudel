@@ -1,32 +1,26 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import fleurHero from '../../../assets/icône_illustration/fleur/fleurhero.svg'; 
-import mainHero from '../../../assets/Image/home/main_hero-removebg.webp';
-import PrimaryButton from '../../Buttons/PrimaryButton/PrimaryButton';
+import React, { useEffect } from 'react';
+import s from './heroSalon.module.sass';
 
-import s from './hero.module.sass';
+const HeroSalon = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const heroElement = document.querySelector(`.${s.salonHero}`);
+        const offset = scrollPosition * 0.3; // Ajuste le facteur de parallaxe
+        heroElement.style.setProperty('--parallax-offset', `${offset}px`);
+    };
 
-const Hero = () => {
-  const navigate = useNavigate();
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
 return (
-    <div className={s.homeHero}>
-      <div className={s.homeHero_txt}>
-        <h1>
-          <span>L'Art des Ongles,</span>
-          <span>une Evasion Créative</span>
-        </h1>
-        <h3>
-          <span>Plongez dans un voyage artistique avec des designs de nail art uniques et raffinés.</span> 
-          <span>Chaque création raconte une histoire, la vôtre.</span>
-        </h3>
-        <PrimaryButton text="Trouvez votre style" onClick={() => navigate('/galerie')} />
-      </div>
-      <div className={s.homeHero_img}>     
-        <img className={s.homeHero_img_fleur} src={fleurHero} alt="Fleur" />
-        <img className={s.homeHero_img_main} src={mainHero} alt="Main_hero" />
-      </div>
-    </div>
+  <div className={`${s.salonHero} ${s['salonHero--parallax']}`}>
+    <h1>Un Voyage au Coeur du Nail Art</h1>
+  </div>
   );
 };
-export default Hero;
+export default HeroSalon;
