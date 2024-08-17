@@ -11,8 +11,6 @@
     align-self: stretch
     overflow: hidden // Évite le scroll horizontal
     box-sizing: border-box // Inclut le padding dans la largeur totale
-    @media (max-width: 768px)
-        height: 60vh
     // Pseudo-élément pour l'image de fond
     &::before 
         content: ''
@@ -42,3 +40,5 @@
 .salonHero
     &--parallax::before
         transform: translate3d(0, var(--parallax-offset), 0) // Applique l'offset calculé
+h1
+    text-align: center
