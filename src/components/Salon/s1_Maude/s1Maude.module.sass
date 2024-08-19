@@ -1,0 +1,113 @@
+@import '../../../index.sass'
+
+.s1Maude
+  display: flex
+  padding: 24px 60px
+  justify-content: center
+  align-items: center
+  height: 500px
+  background-color: $beige
+  overflow: hidden
+  box-sizing: border-box
+  @media (max-width: 768px)
+    display: flex
+    padding: 18px 15px
+    justify-content: center
+    align-items: center
+    height: auto
+
+  &_container
+    display: flex
+    width: 100%
+    height: auto
+    justify-content: space-between
+    align-items: center
+    @media (max-width: 768px)
+      padding-bottom: 18px
+      width: 92%
+      height: auto
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 5%
+
+    &_txt
+      display: flex
+      width: 60%
+      height: auto
+      padding: 24px
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      flex-shrink: 0
+      @media (max-width: 768px)
+        width: 100%
+        height: auto
+        align-items: center
+        gap: 18px
+        padding: 18px
+      h2
+        color: $black
+      &_title
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        gap: 24px
+        @media (max-width: 768px)
+          gap: 18px
+        &_icone
+          width: 40px
+          height: 32px
+    &_img
+      display: flex
+      justify-content: flex-end
+      width: 100%
+      height: auto
+      position: relative
+      @media (max-width: 768px)
+        justify-content: center
+
+      &_photo
+        width: 300px
+        height: auto
+        flex-shrink: 0
+        border: 8px solid $black
+        @media (max-width: 768px)
+          width: 200px
+          height: auto
+
+      &_grdeFleur
+        width: 140px
+        height: 140px
+        position: absolute
+        right: 58%
+        bottom: -20%
+        @media (max-width: 768px)        
+          display: none
+
+      &_petiteFleur
+        width: 50px
+        height: 50px
+        position: absolute
+        right: 85%
+        bottom: 50%
+        @media (max-width: 768px)        
+          display: none
+      
+      &_petitfleur1
+        width: 50px
+        height: 50px
+        position: absolute
+        right: 30%
+        bottom: -18%
+        @media (max-width: 768px)        
+          display: none
+
+      &_petitfleur2
+        width: 50px
+        height: 50px
+        position: absolute
+        right: 90%
+        bottom: 20%
+        @media (max-width: 768px)        
+          display: none
