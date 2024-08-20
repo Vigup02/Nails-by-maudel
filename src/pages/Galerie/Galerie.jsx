@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import NavBarGalerie from '../../components/NavbarGalerie/navbarGalerie';
-import PhotoGalerie from '../../components/PhotoGalerie/photoGalerie';
+import HeroGalerie from '../../components/Galerie/HeroGalerie/HeroGalerie';
+import NavBarGalerie from '../../components/Galerie/NavbarGalerie/navbarGalerie';
+import PhotoGalerie from '../../components/Galerie/PhotoGalerie/photoGalerie';
 import s from './Galerie.module.sass';
 
 const Galerie = () => {
@@ -21,11 +22,11 @@ const Galerie = () => {
 
   return (
     <div className={s.s1Galerie}>
+      <HeroGalerie/>
       <NavBarGalerie
         selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-      <PhotoGalerie selectedCategory={selectedCategory} />
+        setSelectedCategory={setSelectedCategory}/>
+      <PhotoGalerie selectedCategory={selectedCategory}/>
     </div>
   );
 };

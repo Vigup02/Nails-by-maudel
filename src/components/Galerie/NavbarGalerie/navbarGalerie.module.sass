@@ -1,0 +1,24 @@
+@import '../../../index.sass'
+.s1Galerie
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  &_navBar
+    display: flex
+    width: 640px
+    height: auto
+    padding: 8px 16px
+    justify-content: space-between
+    align-items: center
+    background: $beige
+    border: none
+    border-radius: 8px
+    overflow: hidden
+    box-sizing: border-box
+    @media (max-width: 768px)
+      display: flex
+      width: 330px
+      padding: 6px 12px
+      justify-content: space-between
+      align-items: center
