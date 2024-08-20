@@ -1,19 +1,20 @@
 @import '../../../index.sass'
 
-.temoignage
+.valeur
   position: relative
   display: flex
   flex-direction: column
   align-items: center
   gap: 24px
   width: 100%
-  height: 100%
+  height: 400px
   padding: 24px 60px
   overflow: hidden
   box-sizing: border-box
   @media (max-width: 768px)
     gap: 18px
     padding: 15px 18px
+    height: auto
 
   // Pseudo-élément pour l'image de fond
   &::before 
@@ -29,63 +30,107 @@
     opacity: 0.2
     z-index: -1
 
-  &__title, &__subtitle
-    color: $terra-cotta
+  &_title
+    color: $black
     text-align: center
 
-  &__carousel
+  &_carousel
     width: 100%
-    height: auto
+    height: 70%
     display: flex
-    justify-content: center
+    justify-content: space-between
     align-items: center
     padding: 0px 24px
-    
-  .swiper-slide
-    display: flex
-    justify-content: center
-    align-items: center
-
-  &__item
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    text-align: center
-    color: $terra-cotta
-    background-color: $beige
-    border-radius: 50% 
-    border: 1px solid $terra-cotta
-    padding: 24px
-    width: 200px
-    height: 200px
-    margin: 0 auto  // Centre horizontalement l'item
-    transition: transform 0.5s ease, background-color 0.5s ease
     @media (max-width: 768px)
-      padding: 18px
-      border-radius: 0%
+      flex-direction: column
+      height: auto
+      padding: 0 18px
     
-    // Effet de mise en avant pour l'élément actif
-    &--active
-      transform: scale(1.5)
-      background-color: $terra-cotta
-      color: $beige
+    &_item
+      position: relative
+      display: flex
+      width: 33.3%
+      height: 80%
+      padding: 24px
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 24px
+      perspective: 1000px  // Crée un contexte 3D pour le retournement
       @media (max-width: 768px)
-        transform: scale(0.6)
         width: 100%
+        height: 150px
 
-    // Styles pour les éléments à gauche et à droite
-    &:not(&--active)
-      transform: scale(0.8)
-      opacity: 0.7
+      // Conteneur pour les deux faces (avant et arrière)
+      .valeur-carousel-item-inner
+        position: relative
+        width: 100%
+        height: 100%
+        transform-style: preserve-3d
+        transition: transform 0.8s
+        backface-visibility: hidden
+        @media (max-width: 768px)
+          height: 100%
+        // Face avant (icône et texte)
+        &_front
+          position: absolute
+          width: 100%
+          height: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          backface-visibility: hidden
 
-  &__text
-    margin-top: 16px
+          &_icone
+            width: 100px
+            height: 100px
 
-  &__subtext
-    font-weight: bold
-    margin-bottom: 16px
+          &_text
+            text-align: center
 
-/* surcharge de la variable swiper-theme-color */
-:root
-  --swiper-theme-color: #F2E0CF
+        // Face arrière (texte et fond personnalisé)
+        &_back
+          position: absolute
+          width: 100%
+          height: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          padding: 24px
+          color: $beige
+          border-radius: 8px
+          transform: rotateY(180deg)
+          backface-visibility: hidden
+          @media (max-width: 768px)
+            padding: 18px
+            width: auto
+            
+          &_text
+            text-align: center
+
+          &_icone
+            position: absolute
+            opacity: 0.13
+            width: 200px
+            height: 200px
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+      
+      // Effet de retournement
+      &:hover .valeur-carousel-item-inner
+        transform: rotateY(180deg)
+
+      // Couleurs personnalisées pour chaque item
+      &:nth-child(1) .valeur-carousel-item-inner_back
+        background-color: $terra-cotta // Écoute
+
+      &:nth-child(2) .valeur-carousel-item-inner_back
+        background-color: $black
+        color: $blanc// Créativité
+
+      &:nth-child(3) .valeur-carousel-item-inner_back
+        background-color: $Latte
+        color: $black // Excellence
