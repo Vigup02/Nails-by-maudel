@@ -28,8 +28,8 @@ const SignupForm = () => {
 
   return (
     <div className={s.formCont}>
-      <h2>Envie d'en savoir plus ou de partager vos idées ?
-      Laissez-moi votre message ici</h2>
+      <h3 className={s.formCont_title}>Envie d'en savoir plus ou de partager vos idées?
+      Laissez-moi votre message ici</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <div className={s.nameContainer}>
           <div className={s.formGroup}>

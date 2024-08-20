@@ -16,7 +16,7 @@ return (
         <div className={s.s4Coordonnee_container_txt}>
           <div className={s.s4Coordonnee_container_txt_subtitle}>
             <h3>Envie de sublimer vos ongles ?</h3>
-            <h3>Voici comment me joindre ou vous rendre au salon</h3>
+            <h3>Voici comment me joindre ou vous rendre au salon :</h3>
           </div>
           <div className={s.s4Coordonnee_container_txt_adress}>
             <img className={s.s4Coordonnee_container_txt_adress_img} src={adresse} alt="localisation" />
