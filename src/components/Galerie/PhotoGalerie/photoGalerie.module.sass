@@ -6,30 +6,22 @@
   align-items: center
   overflow: hidden
   box-sizing: border-box
+  padding-bottom: 24px
+  padding-left: 60px
+  padding-right: 60px
   width: 100%
-  padding: 0 60px 24px 60px
-  @media (max-width: 768px)
-    padding: 0 20px 20px 20px
 
   &__photos
     width: 100%
     display: grid
-    grid-template-columns: repeat(3, 1fr)
-    grid-gap: 24px
-    gap: 24px
+    grid-template-columns: repeat(3, 1fr) // Trois colonnes de photos
+    grid-gap: 24px // Espacement de 24px entre les photos
+    justify-items: center
 
-    // Photos grandes et petites
-    & > img
-      object-fit: cover
-
-
-  &__photo--large
+  &__photo
     width: 100%
-    height: auto
-
-  &__photo--small
-    width: 100%
-    height: auto
+    height: 400px // Hauteur uniforme pour toutes les photos
+    object-fit: cover // Remplit l'espace sans déformer l'image
 
   &__pagination
     display: flex
@@ -57,4 +49,6 @@
       background-color: $terra-cotta
       color: $beige
       font-weight: bold
+      width: 40px
+      height: 40px
       border-radius: 8px

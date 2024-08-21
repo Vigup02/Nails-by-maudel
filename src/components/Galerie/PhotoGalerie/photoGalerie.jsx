@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import s from './photoGalerie.module.sass';
 
 const importAll = (r) => r.keys().map(r);
@@ -21,9 +21,18 @@ const PhotoGalerie = ({ selectedCategory }) => {
   const filteredPhotos = photos.filter(photo => photo.category === selectedCategory);
   const totalPages = Math.ceil(filteredPhotos.length / photosPerPage);
 
+  const galleryRef = useRef(null); // Création de la référence
+
+  useEffect(() => {
+    // Réinitialiser la page à 1 lorsque la catégorie change
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Remonte en haut de la page
+    if (galleryRef.current) {
+      galleryRef.current.scrollIntoView({ behavior: 'smooth' }); // Défilement vers le haut du composant
+    }
   };
 
   const displayedPhotos = filteredPhotos.slice(
@@ -32,19 +41,16 @@ const PhotoGalerie = ({ selectedCategory }) => {
   );
 
   return (
-    <div className={s.galerie}>
+    <div className={s.galerie} ref={galleryRef}>
       <div className={s.galerie__photos}>
-      {displayedPhotos.map((photo, index) => (
-        <img
-          key={index} // Utilise l'index comme clé unique pour chaque image
-          src={photo.src} // Source de l'image à afficher
-          alt={photo.category} // Texte alternatif pour l'image, basé sur la catégorie
-          className={index % 2 === 0 
-            ? s['galerie__photo--large']  // Si l'index est pair, applique la classe pour les grandes photos
-            : s['galerie__photo--small']  // Sinon, applique la classe pour les petites photos
-          }
-        />
-      ))}
+        {displayedPhotos.map((photo, index) => (
+          <img
+            key={index}
+            src={photo.src}
+            alt={photo.category}
+            className={s.galerie__photo}
+          />
+        ))}
       </div>
       <div className={s.galerie__pagination}>
         {Array.from({ length: totalPages }, (_, index) => (
