@@ -1,6 +1,6 @@
 import React from 'react';
 import SignupForm from '../../../components/Formulaire/formulaire';
-import Fleur from '../../../assets/icône_illustration/fleur/fleur_1_removebg.webp';
+import Fleur from '../../../assets/icône_illustration/fleur/pissenlit.svg';
 import Branche from '../../../assets/icône_illustration/fleur/img1_branche-removebg.webp';
 import s from './s5Formulaire.module.sass';
 

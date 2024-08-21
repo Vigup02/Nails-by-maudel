@@ -1,0 +1,62 @@
+@import '../../../index.sass'
+
+.HeroService
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 70vh
+    padding: 24px 60px
+    overflow: hidden 
+    box-sizing: border-box
+    @media (max-width: 768px)
+        height: 345px
+        padding: 18px 15px
+        flex-direction: column
+        align-items: flex-start
+        gap: 18px
+        flex-shrink: 0
+        align-self: stretch
+        
+    &_txt
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        width: 65%
+        height: auto
+        padding: 24px
+        gap: 24px
+        box-sizing: border-box // Assure que le padding est inclus dans la largeur
+        @media (max-width: 768px)
+            gap: 18px
+            width: 100%
+            height: auto
+            padding: 0px
+    
+    &_img
+        position: relative
+        width: 35% 
+        height: 100% 
+        display: flex
+        justify-content: center 
+        align-items: center 
+        @media (max-width: 768px)
+            position: absolute
+            right: 0
+            bottom: 0
+            width: 30%
+        &_forme
+            position: absolute
+            right: -5px
+            bottom: 10px
+            width: 80%
+            height: auto
+            z-index: 1
+        &_vernis
+            position: absolute
+            right: 0
+            bottom: 10px
+            width: 80%
+            height: auto
+            z-index: 2
