@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import HeroGalerie from '../../components/Galerie/HeroGalerie/HeroGalerie';
 import NavBarGalerie from '../../components/Galerie/NavbarGalerie/navbarGalerie';
 import PhotoGalerie from '../../components/Galerie/PhotoGalerie/photoGalerie';
+import ReseauxSociaux from '../../components/Galerie/reseauxsociaux/reseauxsociaux';
+import Temoignage from '../../components/temoignage/temoignage';
 import s from './Galerie.module.sass';
 
 const Galerie = () => {
@@ -34,6 +36,8 @@ const Galerie = () => {
       <PhotoGalerie selectedCategory={selectedCategory}
       navBarRef={navBarRef} // Ajout de la référence
       />
+      <ReseauxSociaux/>
+      <Temoignage/>
     </div>
   );
 };

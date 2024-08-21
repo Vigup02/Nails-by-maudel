@@ -1,0 +1,91 @@
+@import '../../../index.sass'
+.Reseaux
+    display: flex
+    padding: 24px 0px
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-color: $Latte
+    gap: 24px
+    width: 100%
+    height: auto
+    overflow: hidden
+    box-sizing: border-box
+    position: relative
+    @media (max-width: 768px)
+        padding: 18px 15px
+        gap: 18px
+    &_title
+        color: $black
+        text-align: center
+    &_container
+        display: flex
+        align-items: flex-start
+        gap: 24px
+        @media (max-width: 768px)
+            gap: 18px
+        &_fb, 
+        &_insta
+            width: 100px
+            height: auto
+            @media (max-width: 768px)
+                width: 50px
+                height: auto
+
+    &_fleurvide
+        display: flex
+        width: 40%
+        height: 40%
+        align-items: center
+        position: absolute
+        right: -10%
+        top: 50%
+        @media (max-width: 768px)
+            display: none
+
+    &_fleurpleine
+        display: flex
+        width: 70%
+        height: 70%
+        align-items: center
+        position: absolute
+        left: -31%
+        bottom: 45%
+        @media (max-width: 768px)
+            display: none
+
+    &_petitefleurvide1
+        display: flex
+        width: 10%
+        height: 10%
+        align-items: center
+        position: absolute
+        left: 10%
+        top: 60%
+        @media (max-width: 768px)
+            left: 6%
+            top: 30%
+
+    &_petitefleurpleine
+        display: flex
+        width: 10%
+        height: 10%
+        align-items: center
+        position: absolute
+        right: 10%
+        top: 10%
+        @media (max-width: 768px)
+            right: 6%
+            top: 80%
+    &_petitefleurvide2
+        display: flex
+        width: 10%
+        height: 10%
+        align-items: center
+        position: absolute
+        right: 20%
+        bottom: 20%
+        @media (max-width: 768px)
+            display: none
+       
+

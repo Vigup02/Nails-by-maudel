@@ -13,7 +13,7 @@
   box-sizing: border-box
   @media (max-width: 768px)
     gap: 18px
-    padding: 15px 18px
+    padding: 18px 15px
 
   // Pseudo-élément pour l'image de fond
   &::before 
@@ -63,7 +63,7 @@
     transition: transform 0.5s ease, background-color 0.5s ease
     @media (max-width: 768px)
       padding: 18px
-      border-radius: 0%
+      border-radius: 16px
     
     // Effet de mise en avant pour l'élément actif
     &--active
@@ -71,8 +71,8 @@
       background-color: $terra-cotta
       color: $beige
       @media (max-width: 768px)
-        transform: scale(0.6)
-        width: 100%
+        transform: scale(0.8)
+        width: 80%
 
     // Styles pour les éléments à gauche et à droite
     &:not(&--active)
