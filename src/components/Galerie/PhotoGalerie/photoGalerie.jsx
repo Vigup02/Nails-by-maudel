@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import s from './photoGalerie.module.sass';
 
+// Fonction pour importer toutes les images d'un contexte donné
 const importAll = (r) => r.keys().map(r);
 
+// Importation des images de différentes catégories
 const nailArtImages = importAll(require.context('../../../assets/Image/Galerie/Nail Art', false, /\.(png|jpe?g|svg|webp)$/));
 const coloreImages = importAll(require.context('../../../assets/Image/Galerie/Coloré', false, /\.(png|jpe?g|svg|webp)$/));
 const frenchImages = importAll(require.context('../../../assets/Image/Galerie/French', false, /\.(png|jpe?g|svg|webp)$/));
 const naturelImages = importAll(require.context('../../../assets/Image/Galerie/Naturel', false, /\.(png|jpe?g|svg|webp)$/));
 
+// Création d'une liste d'objets photo avec leur source et catégorie
 const photos = [
   ...nailArtImages.map(src => ({ src, category: 'Nail Art' })),
   ...coloreImages.map(src => ({ src, category: 'Coloré' })),
@@ -15,26 +18,39 @@ const photos = [
   ...naturelImages.map(src => ({ src, category: 'Naturel' })),
 ];
 
-const PhotoGalerie = ({ selectedCategory }) => {
+const PhotoGalerie = ({ selectedCategory, navBarRef }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const photosPerPage = 24;
+  const photosPerPage = 24; // Nombre de photos affichées par page
   const filteredPhotos = photos.filter(photo => photo.category === selectedCategory);
-  const totalPages = Math.ceil(filteredPhotos.length / photosPerPage);
+  const totalPages = Math.ceil(filteredPhotos.length / photosPerPage); // Nombre total de pages
 
-  const galleryRef = useRef(null); // Création de la référence
+  const galleryRef = useRef(null); // Référence au conteneur de la galerie
 
   useEffect(() => {
     // Réinitialiser la page à 1 lorsque la catégorie change
     setCurrentPage(1);
   }, [selectedCategory]);
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    if (galleryRef.current) {
-      galleryRef.current.scrollIntoView({ behavior: 'smooth' }); // Défilement vers le haut du composant
+  // Fonction pour faire défiler vers le composant désiré (bouton de retour en haut)
+  const handleBackTo = (ref) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  // Fonction pour changer de page et faire défiler vers le composant NavBarGalerie
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Utiliser la référence pour défiler vers le composant NavBarGalerie
+    handleBackTo(navBarRef);
+  };
+
+  // Fonction pour faire défiler vers le haut du conteneur (bouton de retour en haut)
+  const handleBackToTop = () => {
+    handleBackTo(navBarRef);
+  };
+
+  // Sélection des photos à afficher en fonction de la page actuelle
   const displayedPhotos = filteredPhotos.slice(
     (currentPage - 1) * photosPerPage,
     currentPage * photosPerPage
@@ -52,6 +68,9 @@ const PhotoGalerie = ({ selectedCategory }) => {
           />
         ))}
       </div>
+      <button className={s.galerie__back} onClick={handleBackToTop}>
+        ↑
+      </button>
       <div className={s.galerie__pagination}>
         {Array.from({ length: totalPages }, (_, index) => (
           <button

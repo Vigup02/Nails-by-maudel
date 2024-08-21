@@ -52,3 +52,34 @@
       width: 40px
       height: 40px
       border-radius: 8px
+
+  &__back
+    position: fixed
+    bottom: 16px
+    right: 16px
+    background-color: $terra-cotta
+    color: $beige
+    border: none
+    border-radius: 50%
+    width: 50px
+    height: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+    font-size: 24px
+    z-index: 1000
+    transition: background-color 0.3s
+
+    &:hover
+      background-color: darken($terra-cotta, 10%)
+
+  // Styles pour les petits écrans
+  @media (max-width: 768px)
+    padding: 0
+    &__photos
+      grid-template-columns: 1fr // Une seule colonne de photos
+      grid-gap: 18px // Réduire l'espacement entre les photos
+    &__photo
+      height: 250px // Hauteur des photos pour les petits écrans

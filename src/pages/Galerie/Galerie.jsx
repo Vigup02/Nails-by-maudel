@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { useSearchParams } from 'react-router-dom';
 import HeroGalerie from '../../components/Galerie/HeroGalerie/HeroGalerie';
 import NavBarGalerie from '../../components/Galerie/NavbarGalerie/navbarGalerie';
@@ -8,6 +8,9 @@ import s from './Galerie.module.sass';
 const Galerie = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('Nail Art');
+
+  // Création d'une référence pour le composant NavBarGalerie
+  const navBarRef = useRef(null);
 
   useEffect(() => {
     const category = searchParams.get('category');
@@ -25,8 +28,12 @@ const Galerie = () => {
       <HeroGalerie/>
       <NavBarGalerie
         selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}/>
-      <PhotoGalerie selectedCategory={selectedCategory}/>
+        setSelectedCategory={setSelectedCategory}
+        ref={navBarRef} // Ajout de la référence
+        />
+      <PhotoGalerie selectedCategory={selectedCategory}
+      navBarRef={navBarRef} // Ajout de la référence
+      />
     </div>
   );
 };
