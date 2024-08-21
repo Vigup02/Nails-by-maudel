@@ -1,0 +1,57 @@
+@import '../../../index.sass'
+
+@keyframes bounce 
+  0%, 20%, 50%, 80%, 100% 
+    transform: translateY(0)
+  40% 
+    transform: translateY(-20px)
+  60%
+    transform: translateY(-10px)
+
+.Reseaux
+  display: flex
+  padding: 24px 0px
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: $beige
+  gap: 24px
+  width: 100%
+  height: auto
+  overflow: hidden
+  box-sizing: border-box
+  position: relative
+  @media (max-width: 768px)
+    padding: 18px 15px
+    gap: 18px
+
+  &_title
+    color: $black
+    text-align: center
+
+  &_subtitle
+    color: $black
+    text-align: center
+
+  &_container
+    display: flex
+    align-items: flex-start
+    gap: 24px
+    @media (max-width: 768px)
+      gap: 18px
+
+    &_fb, 
+    &_insta
+      width: 100px
+      height: auto
+      transition: transform 0.3s ease-in-out
+      animation: bounce 1s infinite
+      @media (max-width: 768px)
+        width: 50px
+        height: auto
+
+    &_fb
+        animation: bounce 1s infinite
+    &_insta
+        animation: bounce 1.5s infinite
+    
