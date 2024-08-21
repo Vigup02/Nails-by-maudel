@@ -8,7 +8,7 @@ const HeroService = () => {
 return (
     <div className={s.HeroService}>
       <div className={s.HeroService_txt}>
-        <h1>Sublimez vos ongles avec mes prestations</h1>
+        <h1>Sublimez vos ongles avec nos prestations</h1>
         <h3>Découvrez nos prestations de nail art et nos tarifs, conçus pour sublimer vos ongles avec des créations uniques et personnalisées.</h3>
       </div>
       <div className={s.HeroService_img}>     
