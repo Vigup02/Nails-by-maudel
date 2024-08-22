@@ -19,7 +19,7 @@ const HeroSalon = () => {
 
 return (
   <div className={`${s.salonHero} ${s['salonHero--parallax']}`}>
-    <h1>Un Voyage au Coeur du Nail Art</h1>
+    <h1 className={s.salonHero_title}>Un Voyage au Coeur du Nail Art</h1>
   </div>
   );
 };

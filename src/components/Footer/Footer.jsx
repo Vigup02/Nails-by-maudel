@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import instagramImg from '../../assets/icône_illustration/reseaux_sociaux/instagram.svg';
@@ -6,6 +7,11 @@ import facebookImg from '../../assets/icône_illustration/reseaux_sociaux/facebo
 import s from './footer.module.sass';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handlePolitiqueClick = () => {
+    navigate('/Politique');
+  };
 
   return (
     <footer className={s.containerFooter}>
@@ -26,8 +32,10 @@ const Footer = () => {
         </div>
       </div>
       <div className={s.containerFooter_politique}>
-        <p>Politique de confidentialité</p>
-        <p>Mentions légales</p>
+        <div onClick={handlePolitiqueClick} className={s.containerFooter_politique_footerLink}>
+          <p>Politique de confidentialité</p>
+          <p>Mentions légales</p>
+        </div>
       </div>
     </footer>
   );

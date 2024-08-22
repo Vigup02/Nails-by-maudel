@@ -12,8 +12,8 @@ const S3Salon = () => {
 return (
   <section className={s.leSalon}>
     <h2 className={s.leSalon_title}>LE SALON</h2>
-    <h3>Le salon est un havre de chaleur et de raffinement.</h3>
-    <h3>Chaque élément du décor est soigneusement sélectionné pour créer une ambiance accueillante et élégante, mêlant des touches vintage à des accents modernes.</h3>
+    <h3 className={s.leSalon_subtitle}>Le salon est un havre de chaleur et de raffinement.</h3>
+    <h3 className={s.leSalon_subtitle}>Chaque élément du décor est soigneusement sélectionné pour créer une ambiance accueillante et élégante, mêlant des touches vintage à des accents modernes.</h3>
     <div className={s.leSalon_galerie}>
       <img className={s.leSalon_galerie_img1} src={Comptoir} alt="comptoir du salon"/>
       <div className={s.leSalon_galerie_cont}>

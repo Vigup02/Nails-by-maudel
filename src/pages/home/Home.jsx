@@ -6,7 +6,7 @@ import Galerie from '../../components/Home/s3_galerie/Galerie';
 import Horaire from '../../components/Home/s4_horaire/horaire';
 import Contact from '../../components/Home/s5_contact/contact';
 import Temoignage from '../../components/temoignage/temoignage';
-import s from './home.module.sass';
+import s from './Home.module.sass';
 
 const Home = () => {
 
