@@ -9,9 +9,12 @@ import s from './contact.module.sass';
 
 const Contact = () => {
   const navigate = useNavigate();
-  const handleButtonClick = () => {
-    navigate('/salon#formulaire-section');
+
+  // Fonction pour naviguer vers la page Salon et l'ancre
+  const handleFormulaireClick = () => {
+    navigate('/salon', { state: { scrollToFormulaire: true } });
   };
+
 
 return (
     <div className={s.s5Contact}>
@@ -31,7 +34,7 @@ return (
             <h2 className={s.s5Contact_container_txt_tel_text}>06 20 46 80 78</h2>
           </div>
         </div>
-        <SecondaryButton text="Pour m'écrire c'est par ici" onClick={handleButtonClick}/>
+        <SecondaryButton text="Pour m'écrire c'est par ici" onClick={handleFormulaireClick}/>
         <img className={s.s5Contact_container_fleurpleine}src={fleurPleine} alt="fleur beige rempli" />
         <img className={s.s5Contact_container_fleurvide}src={fleurVide} alt="fleur beige vide" />
         <img className={s.s5Contact_container_petitefleurpleine}src={fleurPleine} alt="Petite fleur beige rempli" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 import fleur1 from '../../../assets/icône_illustration/fleur/fleur_1_removebg.webp';
 import vernis from '../../../assets/icône_illustration/ongle/vernis-a-ongle.webp';
 import lime from '../../../assets/icône_illustration/ongle/lime-a-ongles.webp';
@@ -11,6 +11,15 @@ import s from './service.module.sass';
 
 const Service = () => {
   const navigate = useNavigate();
+
+  // Fonction pour naviguer et scroller en haut de la page
+  const handleNavigate = (path) => {
+    navigate(path);
+    // Attendre que la navigation soit effectuée avant de scroller en haut
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
+  };
 
 return (
     <div className={s.s2Service}>
@@ -38,7 +47,7 @@ return (
               </div>
               <img className={s.s2Service_container_bloc_sousBloc_liste_fleur2} src={fleur2} alt="fleur 8 pétales" />
             </div>
-            <SecondaryButton  text="Détails des services et tarifs" onClick={() => navigate('/service')} />
+            <SecondaryButton  text="Détails des services et tarifs" onClick={() => handleNavigate('/service')} />
           </div>
         </div>
       </div>

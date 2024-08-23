@@ -9,7 +9,7 @@ import s from './coordonnee.module.sass';
 const S4Coordonnees = () => {
 
 return (
-    <div className={s.s4Coordonnee}>
+    <div id="contact-section" className={s.s4Coordonnee}>
       <h2 className={s.s4Coordonnee_title}>LES COORDONNEES</h2>
       <div className={s.s4Coordonnee_container}>        
         <img className={s.s4Coordonnee_container_item} src={horaire} alt="horaire sur porte entrée" />

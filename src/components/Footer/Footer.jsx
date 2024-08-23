@@ -9,8 +9,13 @@ import s from './footer.module.sass';
 const Footer = () => {
   const navigate = useNavigate();
 
-  const handlePolitiqueClick = () => {
-    navigate('/Politique');
+  // Fonction pour naviguer et scroller en haut de la page
+  const handleNavigate = (path) => {
+    navigate(path);
+    // Attendre que la navigation soit effectuée avant de scroller en haut
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
   };
 
   return (
@@ -32,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={s.containerFooter_politique}>
-        <div onClick={handlePolitiqueClick} className={s.containerFooter_politique_footerLink}>
+        <div className={s.containerFooter_politique_footerLink} onClick={() => handleNavigate('/Politique')}>
           <p>Politique de confidentialité</p>
           <p>Mentions légales</p>
         </div>

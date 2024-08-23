@@ -7,7 +7,7 @@ import s from './s5Formulaire.module.sass';
 const S5Formulaire = () => {
 
 return (
-    <div className={s.s5Formulaire}>
+    <div id="formulaire-section" className={s.s5Formulaire}>
       <img className={s.s5Formulaire_img1}src={Fleur} alt="plante fleurie" />    
       <div className={s.s5Formulaire_container}>
         <h2 className={s.s5Formulaire_container_title}>RESTONS EN CONTACT</h2>        

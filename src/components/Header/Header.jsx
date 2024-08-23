@@ -19,6 +19,14 @@ const Header = () => {
     setMenuOpen(!menuOpen); // Inverse l'état de `menuOpen`
   };
 
+  const handleContactClick = () => {
+    if (location.pathname === '/salon') {
+      document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/salon', { state: { scrollToContact: true } });
+    }
+  };// Navigation vers la page Salon et l'ancre
+
   return (
     <header className={s.headerContainer}>
       {/* Conteneur principal de l'en-tête */}
@@ -48,7 +56,7 @@ const Header = () => {
         />
         <ContactButton
           text="Contact"
-          onClick={() => navigate('/contact')} // Fonction appelée lors du clic pour naviguer vers la page `/contact`
+          onClick={handleContactClick} // Utilisation de la fonction pour gérer le clic
         />
       </nav>
       <BurgerIcon className={s.headerContainer_burgerIcon} isOpen={menuOpen} toggleMenu={toggleMenu} /> {/* Utilisez le nouveau composant */}
