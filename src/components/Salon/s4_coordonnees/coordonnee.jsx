@@ -1,12 +1,16 @@
 import React from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'; // Importation des composants Google Maps
 import horaire from '../../../assets/Image/Salon/Horaire.webp';
-import Map from '../../../assets/Image/Salon/map.png';
 import adresse from '../../../assets/icône_illustration/Maps-Pin.svg';
 import tel from '../../../assets/icône_illustration/Phone.svg';
 import fleurPleine from '../../../assets/icône_illustration/fleur/fleur_pleine_beige.svg';
 import s from './coordonnee.module.sass';
 
 const S4Coordonnees = () => {
+   const center = {
+    lat: 48.06663,
+    lng: -2.96405
+  };
 
 return (
     <div id="contact-section" className={s.s4Coordonnee}>
@@ -28,7 +32,15 @@ return (
           </div>
           <img className={s.s4Coordonnee_container_txt_fleurpleine}src={fleurPleine} alt="fleur beige rempli" />
         </div>
-        <img className={s.s4Coordonnee_container_item} src={Map} alt="plan"/>
+        <LoadScript googleMapsApiKey="AIzaSyCJx1dRrxJq__qi0MAXv9QZ7EVW3-cpJ6w">
+          <GoogleMap 
+            mapContainerClassName={s.s4Coordonnee_container_map}
+            center={center}
+            zoom={13}
+          >
+            <Marker position={center} />
+          </GoogleMap>
+        </LoadScript>
       </div>
     </div>
   );

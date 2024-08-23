@@ -10,16 +10,16 @@ const Temoignage = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const testimonials = [
-    { id: 1, text: "Un service exceptionnel et des designs magnifiques. Chaque visite est une nouvelle aventure !", subText: "- MARIE -" },
-    { id: 2, text: "L'ambiance du salon est incroyable, on s'y sent tout de suite chez soi.", subText: "- SOPHIE -" },
-    { id: 3, text: "Des créations uniques et raffinées, je ne pourrais pas être plus satisfaite.", subText: "- CLAIRE -" },
-    { id: 4, text: "Maude est tout simplement incroyable ! Ses créations sont toujours uniques et de très haute qualité.", subText: "- AURELIE -" },
-    { id: 5, text: "Le souci du détail de Maude est exceptionnel. Je suis toujours ravie de mes ongles après chaque visite.", subText: "- AUDE -" },
-    { id: 6, text: "Un service irréprochable à chaque rendez-vous", subText: "- FATIMA -" },
-    { id: 7, text: "Mes ongles n'ont jamais été aussi beaux ! Merci Maude pour ta gentillesse et ton savoir faire!", subText: "- KARINE -" },
-    { id: 8, text: "Toujours à l'écoute de mes envies, Maude transforme mes idées en réalité avec une maîtrise parfaite.", subText: "- EMILIE -" },
-    { id: 9, text: "Je suis impressionnée par la créativité et le professionnalisme de Maude. Chaque rendez-vous est un vrai plaisir.", subText: "- AMINA -" },
-    { id: 10, text: "Les designs sont modernes, élégants, et toujours à la pointe des tendances. Maude est une artiste!", subText: "- LUCIE -" },
+    { id: 1, text: "Très beau travail et très soigné 🥰 Fait des recherches en fonction du dessin demandé vraiment j'adore", subText: "- KATIA -" },
+    { id: 2, text: "Belle découverte : travail soigné, personne très agréable et très bon rapport qualité prix. Que des satisfactions à chaque rendez-vous. Une artiste dans ce domaine: le sérieux de son travail mérite que des compliments.", subText: "- SYLVIE -" },
+    { id: 3, text: "Maude est extrêmement douée 🥰 ses nails art sont géniaux. On a l'impression de prendre un café avec une amie...sauf qu'on fait ses ongles 🤣!!Si vous commencez, vous ne pourrez plus vous arrêter 😉 ++++ 🙏👍", subText: "- CINDY -" },
+    { id: 4, text: "Cliente habituée depuis quelques mois, je suis devenue addict aux poses de Maude. Elle est très pro et c'est toujours un plaisir d'y venir en rendez-vous :)", subText: "- ELO -" },
+    { id: 5, text: "Je suis allée demander si elle pouvait m'aider après un accident avec un taille-haie qui m'a fendu l'ongle du pouce.'Bien sûr!'et 5 min après, j’ai un revêtement de gel qui maintient parfaitement les deux moitiés de l’ongle.  Fantastique!", subText: "- ADRIAN -" },
+    { id: 6, text: "La perfection toujours au RDV !! Maude est douce, patiente, attentive, et a un talent fou ! Merci de chouchouter mes ongles 😍 …", subText: "- SIXTINE -" },
+    { id: 7, text: "Superbe accueil. Elle fait a main levée c'est impressionnant. Très pro. Je suis plus que contente du resultat", subText: "- SANDRA -" },
+    { id: 8, text: "Toujours bien accueilli, travail bien fait et comprends les besoins de ses clientes. Merci encore. Je recommande avec plaisirs!", subText: "- CELINE -" },
+    { id: 9, text: "Endroit très sympathique avec une belle décoration, après plusieurs rendez-vous semi permanent, travail au top !", subText: "- OCEANE -" },
+    { id: 10, text: "Super expérience pour ma première manucure en salon, je suis ravie et j'ai hâte de recommencer !", subText: "- JULIE -" },
   ];
 
   return (

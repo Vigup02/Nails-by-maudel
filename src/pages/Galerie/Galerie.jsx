@@ -10,7 +10,6 @@ import s from './Galerie.module.sass';
 const Galerie = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('Nail Art');
-
   // Création d'une référence pour le composant NavBarGalerie
   const navBarRef = useRef(null);
 
@@ -18,12 +17,25 @@ const Galerie = () => {
     const category = searchParams.get('category');
     if (category) {
       setSelectedCategory(category);
+      if (['Nail Art', 'Coloré', 'French', 'Naturel'].includes(category)) {// Scroll vers la NavBarGalerie si la catégorie correspond à RoundButton
+        scrollToNavBar();
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll vers le haut si une autre catégorie est utilisée
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // Si aucune catégorie spécifique n'est définie, scroll vers le haut
     }
-
-     // Scrolle vers le haut lorsque la page se monte
-     window.scrollTo({ top: 0, behavior: 'smooth' });
-
   }, [searchParams]);
+
+  const scrollToNavBar = () => {
+    if (navBarRef.current) {
+      const offsetTop = navBarRef.current.offsetTop;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <div className={s.s1Galerie}>

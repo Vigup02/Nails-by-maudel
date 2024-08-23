@@ -26,6 +26,7 @@
         overflow: hidden
         @media (max-width: 768px)
             height: auto
+            flex-direction: column
     
         &_item
             width: 23%
@@ -54,8 +55,7 @@
                 height: auto
             &_subtitle
                 color: $beige
-                h3
-                    text-align: left
+                text-align: left
 
             &_adress, &_tel
                 display: flex      
@@ -89,5 +89,12 @@
                 top: -10%
                 @media (max-width: 768px)
                     display: none
+        &_map
+            width: 23%
+            height: 100%
+            @media (max-width: 768px)
+                width: 100%
+                height: auto
+
       
 
