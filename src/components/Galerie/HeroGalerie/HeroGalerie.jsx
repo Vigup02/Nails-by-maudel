@@ -1,4 +1,6 @@
+// Importation de la bibliothèque React pour créer des composants React.
 import React from 'react';
+// Importation des images utilisées
 import Main_Maroc from '../../../assets/Image/Galerie/img_maroc.webp';
 import Main_Plante from '../../../assets/Image/Galerie/img_plante.webp';
 import Cactus from '../../../assets/Image/Galerie/Animation_cactus.gif';

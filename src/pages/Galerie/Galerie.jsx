@@ -1,10 +1,13 @@
+// Importation de la bibliothèque React pour créer des composants React.
 import React, { useState, useEffect, useRef} from 'react';
 import { useSearchParams } from 'react-router-dom';
+// Importation des images utilisées
 import HeroGalerie from '../../components/Galerie/HeroGalerie/HeroGalerie';
 import NavBarGalerie from '../../components/Galerie/NavbarGalerie/navbarGalerie';
 import PhotoGalerie from '../../components/Galerie/PhotoGalerie/photoGalerie';
 import ReseauxSociaux from '../../components/Galerie/reseauxsociaux/reseauxsociaux';
 import Temoignage from '../../components/temoignage/temoignage';
+// Importation du fichier pour les styles
 import s from './Galerie.module.sass';
 
 const Galerie = () => {

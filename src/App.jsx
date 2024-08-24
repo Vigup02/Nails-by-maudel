@@ -1,17 +1,19 @@
-
+// Importation des bibliothèques nécessaires depuis React
 import React from 'react';
+// Importation du composant Outlet depuis react-router-dom pour gérer l'injection des routes
 import { Outlet } from 'react-router-dom';
-import Header from './components/Header/Header'; // Importez le Header comme composant par défaut
-import Footer from './components/Footer/Footer'; // Importez le Footer comme composant par défaut
-import s from "./app.module.sass"; // Importez les styles
+// Importation des composant globaux
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <div className={s.app}>
+    <div>
+       {/* Insertion du Header pour l'ensemble de l'application */}
       <Header />
-      <div className={s.app_outlet}>
+      {/* Conteneur pour afficher les pages de l'application en fonction de la route */}
         <Outlet />
-      </div>
+      {/* Insertion du Footer pour l'ensemble de l'application */}
       <Footer />
     </div>
   );
