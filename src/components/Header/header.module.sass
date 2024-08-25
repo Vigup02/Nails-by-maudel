@@ -6,6 +6,7 @@
   justify-content: space-between
   align-items: center
   position: relative // Nécessaire pour positionner le menu burger
+  z-index: 10 // Assurez-vous que le header a un z-index pour être au-dessus du contenu en dessous
   @media (max-width: 768px)
     padding: 18px 15px
 
@@ -42,11 +43,12 @@
         position: absolute
         top: 100% // Positionne le menu juste en dessous de l'en-tête
         left: 0
-        width: 90%
+        width: 100%
         background-color: white
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)
         padding: 16px
         box-sizing: border-box // Inclure le padding dans la largeur totale
+         z-index: 9 // Assurez-vous que le menu est au-dessus du contenu
 
       & > button
         margin: 12px 0 // Ajouter de l'espace entre les boutons
@@ -59,3 +61,4 @@
       border: none
       font-size: 40px
       cursor: pointer
+      z-index: 11 // Assurez-vous que l'icône du burger est au-dessus du menu
