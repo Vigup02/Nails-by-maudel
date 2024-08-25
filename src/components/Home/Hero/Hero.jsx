@@ -11,16 +11,15 @@ const Hero = () => {
 
   // Fonction pour naviguer et scroller en haut de la page
   const handleNavigate = (path) => {
-  navigate(path);
-  // Attendre que la navigation soit effectuée avant de scroller en haut
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 0);
-};
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
+  };
 
-return (
+  return (
     <div className={s.homeHero}>
-      <div className={s.homeHero_txt}>
+      <div className={`${s.homeHero_txt} ${s.animateText}`}>
         <h1>
           <span>L'Art des Ongles,</span>
           <span>une Evasion Créative</span>
@@ -38,4 +37,5 @@ return (
     </div>
   );
 };
+
 export default Hero;

@@ -104,8 +104,15 @@
                         position: absolute
                         left: 50%
                         top: 50%
-                        transform: translate(-50%, -50%)
+                        transform: translate(-50%, -50%) rotate(0deg)
                         pointer-events: none // Pour éviter d'interférer avec les autres éléments
+                        animation: rotateFleur 50s linear infinite // rotation 20s pour un tour complet
                         @media (max-width: 768px)
                             width: 70px
                             height: 70px
+                            
+                        @keyframes rotateFleur // Définition de l'animation de rotation
+                            from
+                                transform: translate(-50%, -50%) rotate(0deg) // Assure que l'origine reste centrée pendant la rotation
+                            to
+                                transform: translate(-50%, -50%) rotate(360deg) // La rotation complète se fait autour de son centre    

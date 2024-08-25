@@ -14,11 +14,21 @@ import Cocktail from '../../../assets/icône_illustration/tropical-drink.svg';
 import s from './HeroGalerie.module.sass';
 
 const HeroGalerie = () => {
+  const animateText = (text) => {
+    return text.split('').map((char, index) => (
+      <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+  };
+
 return (
   <div className={s.Galerie}>
     <div className={s.Galerie_container}>
-      <h1>Inspirations et Créations</h1>
-      <h3 className={s.Galerie_container_subtitle}>Découvrez comment les voyages et les inspirations de Maude se transforment en œuvres d'art uniques pour vos ongles.</h3>
+      <h1 className={s.Galerie_container_title}>{animateText("Inspirations et Créations")}</h1>
+      <h3 className={s.Galerie_container_subtitle}>
+        {animateText("Découvrez comment les voyages et les inspirations de Maude se transforment en œuvres d'art uniques pour vos ongles.")}
+      </h3>
     </div>
     <img className={s.Galerie_imgmaroc} src={Main_Maroc} alt="ongle couleur bleue"/>
     <img className={s.Galerie_imgplante} src={Main_Plante} alt="ongle couleur vert"/>
