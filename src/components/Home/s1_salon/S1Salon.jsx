@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Importation du hook useNaviga
 import vitrineSalon from '../../../assets/Image/home/Vitrine.webp'; // Importation de l'image de vitrine
 import brancheFeuille from '../../../assets/icône_illustration/fleur/branche_6_feuille_removebg.webp'; // Importation de l'image de branche de feuille
 import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton'; // Importation du composant SecondaryButton
-import s from './salon.module.sass'; // Importation des styles SASS pour ce composant
+import s from './S1salon.module.sass'; // Importation des styles SASS pour ce composant
 
 // Hook personnalisé pour observer les intersections des éléments avec la fenêtre de visualisation
 const useIntersectionObserver = (options) => {
@@ -38,7 +38,7 @@ const useIntersectionObserver = (options) => {
   return [ref, isIntersecting]; // Retourner la référence et l'état de visibilité
 };
 
-const Salon = () => {
+const S1Salon = () => {
   // Hook pour la navigation programmatique
   const navigate = useNavigate();
 
@@ -103,4 +103,4 @@ const Salon = () => {
   );
 };
 
-export default Salon;
+export default S1Salon;

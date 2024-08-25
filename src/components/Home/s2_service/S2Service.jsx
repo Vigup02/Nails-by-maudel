@@ -7,9 +7,9 @@ import nailArt from '../../../assets/icône_illustration/ongle/nail_art.webp';
 import broken from '../../../assets/icône_illustration/ongle/nail_broken.webp';
 import fleur2 from '../../../assets/icône_illustration/fleur/fleur_pleine_latte.svg'; 
 import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton';
-import s from './service.module.sass';
+import s from './S2service.module.sass';
 
-const Service = () => {
+const S2Service = () => {
   const navigate = useNavigate();
 
   // Fonction pour naviguer et scroller en haut de la page
@@ -54,4 +54,4 @@ return (
     </div>
   );
 };
-export default Service;
+export default S2Service;

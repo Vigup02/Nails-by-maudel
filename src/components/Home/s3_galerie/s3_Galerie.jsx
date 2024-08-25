@@ -4,9 +4,9 @@ import imgNailart from '../../../assets/Image/home/img_nailart.webp';
 import imgColore from '../../../assets/Image/home/img_coloré.webp';
 import imgFrench from '../../../assets/Image/home/img_french.webp';
 import imgNaturel from '../../../assets/Image/home/img_naturel.webp';
-import s from './galerie.module.sass';
+import s from './s3galerie.module.sass';
 
-const Galerie = () => {
+const S3Galerie = () => {
 
 return (
     <div className={s.s3Galerie}>
@@ -32,4 +32,4 @@ return (
     </div>
   );
 };
-export default Galerie;
+export default S3Galerie;

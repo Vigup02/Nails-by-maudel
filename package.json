@@ -56,6 +56,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.3.3",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.77.8",

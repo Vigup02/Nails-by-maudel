@@ -1,27 +1,40 @@
 // Composant du formulaire
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { saveUserData } from '../../assets/userSlice';
 import s from './formulaire.module.sass';
 import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'; // Assurez-vous que le chemin est correct
 
 const SignupForm = () => {
+  // Initialisation de react-hook-form
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
-  const [confirmationMessage, setConfirmationMessage] = useState('');
+  // Initialisation du hook useDispatch pour envoyer des actions au store Redux
+  const dispatch = useDispatch();  
+  // État pour gérer le message de confirmation
+  const [confirmationMessage, setConfirmationMessage] = useState(''); 
+  // État pour gérer l'affichage du modal de confirmation
+  // Le modal est initialement caché (false), et sera affiché (true) après la soumission du formulaire
   const [showModal, setShowModal] = useState(false);
-
+  // Fonction appelée lors de la soumission du formulaire
   const onSubmit = data => {
-    console.log(data);
-
+    console.log(data); // Affiche les données du formulaire dans la console pour le débogage
     // Simuler l'envoi de l'email (remplacez par la logique réelle)
     // e.g., axios.post('/send-email', data);
 
-    setConfirmationMessage('Votre message a été envoyé avec succès !');
-    setShowModal(true);
-    reset();
+      // Enregistrement des données utilisateur dans le store Redux
+      dispatch(saveUserData(data));
+       // Mise à jour de l'état pour afficher le message de confirmation
+      setConfirmationMessage('Votre message a été envoyé avec succès !');
+       // Afficher le modal de confirmation
+      setShowModal(true);
+      // Réinitialiser les champs du formulaire
+      reset();
 
-    // Optionnel : Réinitialiser le message après 5 secondes
+    // Optionnel :  Réinitialiser le message et cacher le modal après 5 secondes
     setTimeout(() => {
       setConfirmationMessage('');
+      
       setShowModal(false);
     }, 5000);
   };

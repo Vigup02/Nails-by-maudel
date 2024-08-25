@@ -7,8 +7,10 @@ import 'swiper/css/pagination';
 import s from './temoignage.module.sass';
 
 const Temoignage = () => {
+  // État pour garder la trace de la diapositive active
   const [activeSlide, setActiveSlide] = useState(0);
 
+  // Liste des témoignages à afficher dans le carrousel
   const testimonials = [
     { id: 1, text: "Très beau travail et très soigné 🥰 Fait des recherches en fonction du dessin demandé vraiment j'adore", subText: "- KATIA -" },
     { id: 2, text: "Belle découverte : travail soigné, personne très agréable et très bon rapport qualité prix. Que des satisfactions à chaque rendez-vous. Une artiste dans ce domaine: le sérieux de son travail mérite que des compliments.", subText: "- SYLVIE -" },
@@ -27,41 +29,44 @@ const Temoignage = () => {
       <h2 className={s.temoignage__title}>LES TEMOIGNAGES</h2>
       <h3 className={s.temoignage__subtitle}>Découvrez les expériences de mes clientes et laissez-vous inspirer par leurs histoires</h3>
       <div className={s.temoignage__carousel}>
+        {/* Composant Swiper qui gère le carrousel */}
         <Swiper
           className={s.temoignage__carousel_swiper}
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30} // Ajustez cet espace pour s'assurer que les slides ne débordent pas
-          slidesPerView={3} // Affiche 3 slides à la fois
+          modules={[Navigation, Pagination, Autoplay]} // Modules Swiper utilisés pour la navigation, la pagination et le défilement automatique
+          spaceBetween={30} // Espace entre les slides
+          slidesPerView={3} // Nombre de slides affichés simultanément
           centeredSlides={true} // Centre le slide actif
-          loop={true} // Active la boucle pour le carrousel
-          onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+          loop={true} // Permet la boucle infinie du carrousel
+          onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)} // Met à jour l'état de la slide active lors du changement de slide
           autoplay={{
-            delay: 3000, // Temps en millisecondes avant de passer à la diapositive suivante
-            disableOnInteraction: false, // Continue à défiler même après une interaction utilisateur
+            delay: 3000, // Intervalle de temps avant de passer à la slide suivante
+            disableOnInteraction: false, // Maintient l'autoplay même après interaction de l'utilisateur
           }}
           pagination={{
-            clickable: true,
+            clickable: true, // Permet à l'utilisateur de cliquer sur la pagination
             renderBullet: (index, className) => (
-              `<span class="${className}"></span>`
+              `<span class="${className}"></span>` // Structure HTML de chaque point de pagination
             ),
           }}
-          // Ajouter les callbacks pour vérifier l'autoplay
+          // Callbacks pour surveiller l'état de l'autoplay
           onAutoplayStart={() => console.log('Autoplay has started')}
           onAutoplayStop={() => console.log('Autoplay has stopped')}
           breakpoints={{
             768: {
-              slidesPerView: 3, // Maintient l'affichage de 3 slides sur desktop
+              slidesPerView: 3, // Affiche 3 slides pour les écrans larges (desktop)
             },
             320: {
-              slidesPerView: 1, // Pour mobile, affiche 1 slide à la fois
+              slidesPerView: 1, // Affiche 1 slide pour les petits écrans (mobile)
             },
           }}
         >
-        
+          {/* Génère un SwiperSlide pour chaque témoignage dans le tableau testimonials */}
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.id}>
               <div className={`${s['temoignage__item']} ${index === activeSlide ? s['temoignage__item--active'] : ''}`}>
+                {/* Affiche le texte du témoignage */}
                 <p className={s.temoignage__text}>{testimonial.text}</p>
+                {/* Affiche le sous-texte (nom de l'auteur du témoignage) */}
                 <p className={s.temoignage__subtext}>{testimonial.subText}</p>
               </div>
             </SwiperSlide>

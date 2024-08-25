@@ -5,9 +5,9 @@ import tel from '../../../assets/icône_illustration/Phone.svg';
 import fleurPleine from '../../../assets/icône_illustration/fleur/fleur_pleine_beige.svg';
 import fleurVide from '../../../assets/icône_illustration/fleur/fleur_vide_beige.svg'; 
 import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton';
-import s from './contact.module.sass';
+import s from './s5contact.module.sass';
 
-const Contact = () => {
+const S5Contact = () => {
   const navigate = useNavigate();
 
   // Fonction pour naviguer vers la page Salon et l'ancre
@@ -44,4 +44,4 @@ return (
     </div>
   );
 };
-export default Contact;
+export default S5Contact;

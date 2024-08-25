@@ -4,9 +4,9 @@ import brancheFeuille from '../../../assets/icône_illustration/fleur/branche_6_
 import calendrier from '../../../assets/icône_illustration/calendar-schedule.svg';
 import fleurPissenlit from '../../../assets/icône_illustration/fleur/pissenlit.svg';
 import TableCalendar from '../../table_calendar/TableCalendar';
-import s from './horaire.module.sass';
+import s from './S4horaire.module.sass';
 
-const Horaire = () => {
+const S4Horaire = () => {
 
 return (
     <div className={s.s4Horaire}>
@@ -28,4 +28,4 @@ return (
     </div>
   );
 };
-export default Horaire;
+export default S4Horaire;
