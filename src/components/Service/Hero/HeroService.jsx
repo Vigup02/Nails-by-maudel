@@ -16,7 +16,7 @@ const HeroService = () => {
     <div className={s.HeroService}>
       <div className={s.HeroService_txt}>
         <h1>{animateText("Sublimez vos ongles avec nos prestations")}</h1>
-        <h3>{animateText("Découvrez nos prestations de nail art et nos tarifs, conçus pour sublimer vos ongles avec des créations uniques et personnalisées.")}</h3>
+        <h3><span>Découvrez nos prestations de nail art et nos tarifs, conçus pour sublimer vos ongles avec des créations uniques et personnalisées.</span></h3>
       </div>
       <div className={s.HeroService_img}>     
         <img className={s.HeroService_img_forme} src={Forme} alt="Forme arrondie avec coin bas gauche en angle" />

@@ -27,7 +27,7 @@ return (
     <div className={s.Galerie_container}>
       <h1 className={s.Galerie_container_title}>{animateText("Inspirations et Créations")}</h1>
       <h3 className={s.Galerie_container_subtitle}>
-        {animateText("Découvrez comment les voyages et les inspirations de Maude se transforment en œuvres d'art uniques pour vos ongles.")}
+      <span>Découvrez comment les voyages et les inspirations de Maude se transforment en œuvres d'art uniques pour vos ongles.</span>
       </h3>
     </div>
     <img className={s.Galerie_imgmaroc} src={Main_Maroc} alt="ongle couleur bleue"/>
