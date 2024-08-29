@@ -1,9 +1,9 @@
 import React from 'react'; // Importation de React pour utiliser les fonctionnalités React
 import { useNavigate } from 'react-router-dom'; // Importation du hook useNavigate pour la navigation programmatique
-import vitrineSalon from '../../../assets/Image/home/Vitrine.webp'; // Importation de l'image de vitrine
-import brancheFeuille from '../../../assets/icône_illustration/fleur/branche_6_feuille_removebg.webp'; // Importation de l'image de branche de feuille
-import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton'; // Importation du composant SecondaryButton
-import s from './S1salon.module.sass'; // Importation des styles SASS pour ce composant
+import vitrineSalon from '../../../assets/Image/home/Vitrine.webp'; 
+import brancheFeuille from '../../../assets/icône_illustration/fleur/branche_6_feuille_removebg.webp'; 
+import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton'; 
+import s from './S1salon.module.sass'; 
 
 // Hook personnalisé pour observer les intersections des éléments avec la fenêtre de visualisation
 const useIntersectionObserver = (options) => {
@@ -39,7 +39,7 @@ const useIntersectionObserver = (options) => {
 };
 
 const S1Salon = () => {
-  // Hook pour la navigation programmatique
+  // Hook pour la navigation 
   const navigate = useNavigate();
 
   // Fonction pour naviguer et scroller en haut de la page
@@ -80,7 +80,6 @@ const S1Salon = () => {
           className={`${s.s1Salon_container_txt} ${isVisibleTxt ? s.visible : ''}`} 
           ref={refTxt}
         >
-          {/* Titre et description du salon */}
           <h2 className={s.s1Salon_container_txt_title}>LE SALON</h2>
           <h3>Un Salon où chaleur et élégance se rencontrent</h3>
           <p>Entrez dans un espace empreint de chaleur et de caractère, où l'authenticité se marie avec une élégance moderne. Chaque coin de notre salon reflète une histoire unique, créant une atmosphère accueillante et inspirante.</p>

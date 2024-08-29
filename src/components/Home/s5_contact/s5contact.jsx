@@ -10,11 +10,10 @@ import s from './s5contact.module.sass';
 const S5Contact = () => {
   const navigate = useNavigate();
 
-  // Fonction pour naviguer vers la page Salon et l'ancre
+  // Fonction pour naviguer vers la page Salon et l'ancre vers le formulaire
   const handleFormulaireClick = () => {
     navigate('/salon', { state: { scrollToFormulaire: true } });
   };
-
 
 return (
     <div className={s.s5Contact}>

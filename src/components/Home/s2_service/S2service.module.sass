@@ -6,7 +6,7 @@
     align-items: center
     gap: 24px
     align-self: stretch
-    @media (max-width: 768px)
+    @media (max-width: 500px)
         padding: 18px 15px
         gap: 18px
     &_title
@@ -23,7 +23,7 @@
         gap: 24px
         align-self: stretch
         background-color: $Latte
-        @media (max-width: 768px)
+        @media (max-width: 500px)
             gap: 5%
         &_bloc
             display: flex
@@ -32,7 +32,7 @@
             align-self: stretch
             width: 100%
             height: 100%
-            @media (max-width: 768px)
+            @media (max-width: 500px)
                 justify-content: center
                 align-self: center
             &_img
@@ -40,7 +40,7 @@
                 height: auto
                 display: flex
                 align-self: flex-end
-                @media (max-width: 768px)
+                @media (max-width: 500px)
                     display: none
             &_sousBloc
                 display: flex
@@ -49,7 +49,7 @@
                 flex-direction: column
                 align-items: center
                 gap: 24px
-                @media (max-width: 768px)
+                @media (max-width: 500px)
                     width: 80%
                     height: 375px
                     padding: 18px 0px
@@ -63,7 +63,7 @@
                     border-radius: 0px 0px 0px 32px
                     background-color: $blanc
                     position: relative
-                    @media (max-width: 768px)
+                    @media (max-width: 500px)
                         height: 326px
                         border-radius: 0
                     &_vernis, &_lime, &_nailart, &_broken
@@ -77,7 +77,7 @@
                         background-color: $blanc
                         border: 2px solid $black
                         box-sizing: border-box // La bordure et le padding sont inclus dans la largeur et la hauteur
-                        @media (max-width: 768px)
+                        @media (max-width: 500px)
                             border: 0.5px solid $black
                             box-sizing: border-box
                             padding: 8px
@@ -85,7 +85,7 @@
                             width: 100px
                             height: 100px
                             flex-shrink: 0
-                            @media (max-width: 768px)
+                            @media (max-width: 500px)
                                 width: 50px
                                 height: 50px
                         &_text1, &_text2, &_text3, &_text4 
@@ -93,7 +93,7 @@
                         
                     &_nailart
                         border-radius: 0px 0px 0px 32px
-                        @media (max-width: 768px)
+                        @media (max-width: 500px)
                             border-radius: 0px 0px 0px 0px
                     &_fleur2
                         display: flex
@@ -106,13 +106,14 @@
                         top: 50%
                         transform: translate(-50%, -50%) rotate(0deg)
                         pointer-events: none // Pour éviter d'interférer avec les autres éléments
-                        animation: rotateFleur 50s linear infinite // rotation 20s pour un tour complet
-                        @media (max-width: 768px)
+                        animation: rotateFleur 50s linear infinite // rotation 50s pour un tour complet
+                        @media (max-width: 500px)
                             width: 70px
                             height: 70px
                             
-                        @keyframes rotateFleur // Définition de l'animation de rotation
-                            from
-                                transform: translate(-50%, -50%) rotate(0deg) // Assure que l'origine reste centrée pendant la rotation
-                            to
-                                transform: translate(-50%, -50%) rotate(360deg) // La rotation complète se fait autour de son centre    
+// Définition de l'animation de rotation    
+@keyframes rotateFleur 
+    from
+        transform: translate(-50%, -50%) rotate(0deg) // Assure que l'origine reste centrée pendant la rotation
+    to
+        transform: translate(-50%, -50%) rotate(360deg) // La rotation complète se fait autour de son centre    
