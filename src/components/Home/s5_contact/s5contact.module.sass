@@ -62,6 +62,9 @@
                     width: 100%
                     gap: 18px
                     padding: 0px
+                span::before
+                    content: '\A' // Code pour un saut de ligne
+                    white-space: pre // Assure que le saut de ligne est respecté
                 &_img1, &_img2
                     width: auto 
                     height: auto
@@ -132,7 +135,7 @@
             @media (max-width: 500px)
                 display: none
 
-//Animation ic^ne réseaux
+//Animation icône réseaux
 @keyframes bounce 
   0%, 20%, 50%, 80%, 100% 
     transform: translateY(0)

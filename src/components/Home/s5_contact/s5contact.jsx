@@ -26,7 +26,7 @@ return (
         <div className={s.s5Contact_container_txt}>
           <div className={s.s5Contact_container_txt_adress}>
             <img className={s.s5Contact_container_txt_adress_img1} src={adresse} alt="localisation" />
-            <h2 className={s.s5Contact_container_txt_adress_text}>27 rue Friedland, 56300 PONTIVY</h2>
+            <h2 className={s.s5Contact_container_txt_adress_text}>27 rue Friedland <span>56300 PONTIVY</span></h2>
           </div>
           <div className={s.s5Contact_container_txt_tel}>
             <img className={s.s5Contact_container_txt_tel_img2} src={tel} alt="téléphone" />
