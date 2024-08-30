@@ -6,15 +6,15 @@ const Tarif = ({ imageSrc, services }) => {
   return (
     <div className={s.tarifaire}>
       <div className={s.tarifaire_image}>
-        {/* Affichage de l'image reçue via la prop imageSrc */}
+        {/* Affichage image via prop imageSrc */}
         <img src={imageSrc} alt="Service illustration" />
       </div>
       <div className={s.tarifaire_content}>
         {/* Table pour afficher les services et leurs prix */}
         <table>
           <tbody>
-            {/* Itération sur chaque entrée du tableau 'services' */}
-            {/* Création d'une ligne (<tr>) pour chaque service */}
+            {/* Itération sur chaque entrée du tableau 'services' : génère pour chaque service avec les détails du service (nom, prix)*/}
+            {/* Création d'une ligne (<tr>) (clé unique) pour chaque service */}
             {services.map((service, index) => (
               <tr key={index}>
                 {/* Colonne pour le nom du service */}
