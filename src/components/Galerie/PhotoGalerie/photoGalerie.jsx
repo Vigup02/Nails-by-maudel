@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import s from './photoGalerie.module.sass';
 
-// Fonction pour importer toutes les images d'un contexte donné
+// Fonction pour importer toutes les images
 const importAll = (r) => r.keys().map(r);
 
 // Importation des images de différentes catégories

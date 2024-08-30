@@ -21,6 +21,7 @@
         &_title,
         &_subtitle
             text-align: center
+            display: inline-block
             // Application des animations d'apparition pour les textes
             span
                 display: inline-block
@@ -36,7 +37,7 @@
         height: auto
         transform: rotate(180deg)
         border-radius: 16px 0 0 16px
-        @media (max-width: 768px)
+        @media (max-width: 1000px)
             width: 50px
             top: 35%
     &_imgplante
@@ -45,27 +46,23 @@
         position: absolute
         left: 17%
         top: -4%
-        @media (max-width: 768px)
-            width: 80px
-            left: 5%
-            top: -6%
+        @media (max-width: 1000px)
+            display: none
     &_anicactus
         width: 200px
         height: auto
         position: absolute
         left: 12%
         top: 10%
-        @media (max-width: 768px)
-            width: 80px
-            left: 2%
-            top: 5%
+        @media (max-width: 1000px)
+            display: none
     &_imgsmiley
         width: 268px
         height: auto
         position: absolute
         right: 0%
         top:0%
-        @media (max-width: 768px)
+        @media (max-width: 1000px)
             width: 80px
     &_anismiley
         width: 150px
@@ -74,15 +71,15 @@
         position: absolute
         right: 15%
         top: -1%
-        @media (max-width: 768px)
-            width: 60px
+        @media (max-width: 1000px)
+            display: none
     &_imgleopard
         width: 170px
         height: auto
         position: absolute
         right: 17%
         bottom: 0%
-        @media (max-width: 768px)
+        @media (max-width: 1000px)
             width: 60px
             right: 2%
             bottom: 5%
@@ -93,7 +90,7 @@
         position: absolute
         right: 50%
         top: 75%
-        @media (max-width: 768px)
+        @media (max-width: 1000px)
             display: none
     &_img2maroc
         width: 180px
@@ -102,8 +99,8 @@
         position: absolute
         left: 1%
         top: 55%
-        @media (max-width: 768px)
-            width: 50px
+        @media (max-width: 1000px)
+            display: none
     &_img2leopard
         width: 180px
         height: auto
@@ -111,20 +108,18 @@
         position: absolute
         right: 7%
         top: 65%
-        @media (max-width: 768px)
-            width: 60px
-            right: 15%
-            top: 85%
+        @media (max-width: 1000px)
+            display: none
     &_imgcocktail
         width: 128px
         height: 128px
         position: absolute
         right: 60%
         top: 75%
-        @media (max-width: 768px)
+        @media (max-width: 1000px)
             display: none
 
-// Animation pour l'apparition des lettres
+// Animation pour l'apparition des mots
 @keyframes appear
   from
     opacity: 0

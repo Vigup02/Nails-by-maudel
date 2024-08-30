@@ -17,10 +17,22 @@ const HeroSalon = () => {
   };
 }, []);
 
+  // Fonction pour animer le texte, mot par mot
   const animateText = (text) => {
-    return text.split('').map((char, index) => (
-      <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
-        {char === ' ' ? '\u00A0' : char}
+    // Divise le texte en mots en utilisant l'espace (' ') comme séparateur
+    return text.split(' ').map((word, index) => (
+      // Retourne un élément <span> pour chaque mot avec une animation décalée
+      <span 
+        key={index} // Clé unique pour chaque <span> basée sur l'index du mot
+        style={{ 
+          animationDelay: `${index * 0.3}s`, // Délai d'animation sur le mot
+          display: 'inline-block', // Force le mot à se comporter pour qu'il ne se coupe pas
+          whiteSpace: 'nowrap' // Empêche le mot de se couper en fin de ligne, le mot reste entier
+        }}
+      >
+        {word} {/* Affiche le mot */}
+        {/* Ajoute un espace insécable après chaque mot sauf le dernier */}
+        {index < text.split(' ').length - 1 && '\u00A0'}
       </span>
     ));
   };
