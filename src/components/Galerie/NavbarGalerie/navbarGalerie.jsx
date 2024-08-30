@@ -2,7 +2,7 @@
 import React, { forwardRef } from 'react'; 
 // Importation du composant NavBarButton pour les boutons de la barre de navigation
 import NavBarButton from '../../Buttons/NavBarButton/NavBarButton'; 
-// Importation des styles spécifiques au composant
+// Importation des styles 
 import s from './navbarGalerie.module.sass'; 
 
 // Utilisation de forwardRef pour permettre la gestion de la référence par le parent

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; // Importation de la bibliothèque React et du hook useState pour la gestion de l'état.
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Importation des hooks et composants de react-router-dom pour la navigation.
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Importation du composant 'Link' et des hooks 'useLocation' et useNavigate' de react-router-dom pour la navigation.
 import s from './header.module.sass'; 
 import logoImg from '../../assets/Logo/Logo_terra_cotta-removebg_header.webp'; 
 import NavBarButton from '../Buttons/NavBarButton/NavBarButton'; 
@@ -7,8 +7,8 @@ import ContactButton from '../Buttons/ContactButton/ContactButton';
 import BurgerIcon from '../BurgerIcon/BurgerIcon';
 
 const Header = () => {
-  const navigate = useNavigate(); // Hook permettant de naviguer programatiquement vers une autre route.
-  const location = useLocation(); // Hook permettant d'obtenir l'objet de localisation actuel pour vérifier l'URL.
+  const navigate = useNavigate(); // Hook permettant de naviguer vers un autre emplacement.
+  const location = useLocation(); // Hook permettant d'obtenir la localisation actuelle pour vérifier l'URL.
   const [menuOpen, setMenuOpen] = useState(false); // État pour suivre l'ouverture du menu burger.
 
   // Fonction pour basculer l'état du menu burger

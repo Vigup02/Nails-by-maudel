@@ -1,5 +1,5 @@
-import React from 'react'; // Importation de React pour utiliser les fonctionnalités React
-import { useNavigate } from 'react-router-dom'; // Importation du hook useNavigate pour la navigation programmatique
+import React from 'react'; 
+import { useNavigate } from 'react-router-dom'; // Importation du hook useNavigate pour la navigation
 import vitrineSalon from '../../../assets/Image/home/Vitrine.webp'; 
 import brancheFeuille from '../../../assets/icône_illustration/fleur/branche_6_feuille_removebg.webp'; 
 import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton'; 
@@ -10,7 +10,7 @@ const useIntersectionObserver = (options) => {
   // État pour suivre si l'élément est visible ou non
   const [isIntersecting, setIsIntersecting] = React.useState(false);
   
-  // Référence à l'élément DOM que nous voulons observer
+  // Référence à l'élément DOM observé
   const ref = React.useRef(null);
 
   React.useEffect(() => {
@@ -60,7 +60,7 @@ const S1Salon = () => {
 
   return (
     <div className={s.s1Salon}>
-      {/* Section de fond, visible uniquement lorsqu'elle est dans la vue */}
+      {/* Section de fond, visible uniquement quand dans la vue */}
       <div 
         className={`${s.s1Salon_bkgrd} ${isVisibleBkgrd ? s.visible : ''}`} 
         ref={refBkgrd}
@@ -68,7 +68,7 @@ const S1Salon = () => {
       </div>
       
       <div className={s.s1Salon_container}>
-        {/* Image de vitrine, visible uniquement lorsqu'elle est dans la vue */}
+        {/* Image de vitrine, visible uniquement quand dans la vue */}
         <img 
           className={`${s.s1Salon_container_imgvitrine} ${isVisibleImgvitrine ? s.visible : ''}`} 
           src={vitrineSalon} 
@@ -84,13 +84,13 @@ const S1Salon = () => {
           <h3>Un Salon où chaleur et élégance se rencontrent</h3>
           <p>Entrez dans un espace empreint de chaleur et de caractère, où l'authenticité se marie avec une élégance moderne. Chaque coin de notre salon reflète une histoire unique, créant une atmosphère accueillante et inspirante.</p>
           
-          {/* Bouton visible uniquement lorsqu'il est dans la vue */}
+          {/* Bouton visible uniquement quand dans la vue */}
           <div className={`${s.s1Salon_container_txt_button1} ${isVisibleButton2 ? s.visible : ''}`} ref={refButton2}>
             <SecondaryButton text="Découvrez l’univers du salon" onClick={() => handleNavigate('/salon')} />
           </div>
         </div>
         
-        {/* Icône visible uniquement lorsqu'elle est dans la vue */}
+        {/* Icône visible uniquement quand dans la vue */}
         <img 
           className={`${s.s1Salon_container_icone} ${isVisibleIcone ? s.visible : ''}`} 
           src={brancheFeuille} 

@@ -66,6 +66,9 @@
                     width: 100%
                     gap: 18px
                     padding: 0px
+                span::before
+                    content: '\A' // Code pour un saut de ligne
+                    white-space: pre // Assure que le saut de ligne est respecté
                 &_img
                     width: auto // Garde la largeur automatique
                     height: auto // Garde la hauteur automatique

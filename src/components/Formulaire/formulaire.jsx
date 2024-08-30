@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { saveUserData } from '../../assets/userSlice';
 import s from './formulaire.module.sass';
-import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'; // Assurez-vous que le chemin est correct
+import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton';
 
 const SignupForm = () => {
   // Initialisation de react-hook-form
@@ -20,7 +20,6 @@ const SignupForm = () => {
   const onSubmit = data => {
     console.log(data); // Affiche les données du formulaire dans la console pour le débogage
     // Simuler l'envoi de l'email (remplacez par la logique réelle)
-    // e.g., axios.post('/send-email', data);
 
       // Enregistrement des données utilisateur dans le store Redux
       dispatch(saveUserData(data));
@@ -31,7 +30,7 @@ const SignupForm = () => {
       // Réinitialiser les champs du formulaire
       reset();
 
-    // Optionnel :  Réinitialiser le message et cacher le modal après 5 secondes
+    // Réinitialiser le message et cacher le modal après 5 secondes
     setTimeout(() => {
       setConfirmationMessage('');
       
