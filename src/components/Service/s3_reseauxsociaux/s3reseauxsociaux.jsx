@@ -6,7 +6,7 @@ import s from './s3reseauxsociaux.module.sass';
 const ReseauxSociaux2 = () => {
 return (
     <div className={s.Reseaux}>
-      <h2 className={s.Reseaux_title}>OFFRES SPECIALES ET CARTE CADEAUX</h2>
+      <h2 className={s.Reseaux_title}>OFFRES SPECIALES ET CARTES CADEAUX</h2>
       <h3 className={s.Reseaux_title}>Suivez Nails by Maude'l sur les réseaux sociaux pour ne rien manquer de nos offres spéciales, jeux concours et soldes exclusives !</h3>
       <h3 className={s.Reseaux_title}>Pour faire plaisir à vos proches, pensez à nos cartes cadeaux disponibles directement au salon. Découvrez et partagez la magie du nail art !</h3>
       <div className={s.Reseaux_container}>
